@@ -1,0 +1,8 @@
+# Ref: contract `../how-to-use/04-commands-workflows.md`.
+# Workflow: test-and-verify
+states:
+  - receive_change
+  - fixture_check: {skill: pytest-fixture-factory}
+  - run_matrix: {cmd: "python3 -m pytest scripts/ -q", hard_gate: true}
+  - sandbox_replay: {task: "sandbox -- python3 -m pytest scripts/ -q"}
+  - done

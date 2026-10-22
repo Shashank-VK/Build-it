@@ -1,0 +1,37 @@
+# Ref: contract `../how-to-use/04-commands-workflows.md`.
+# Alternatives Generator Workflow State Machine
+# Solo AI Product Engineering System v1.0
+
+name: alternatives-generator
+version: "1.0"
+max_steps: 5
+on_exceed_max_steps: fatal_error
+
+states:
+  - id: receive_problem
+    type: input
+    next: generate_alternatives
+
+  - id: generate_alternatives
+    type: ai_action
+    skill: "alternatives-brainstorm"
+    command: "generate 3+ alternatives for: {problem}"
+    next: evaluate_alternatives
+
+  - id: evaluate_alternatives
+    type: branch
+    condition: "alternatives.count >= 3"
+    on_true: alternatives_ready
+    on_false: generate_alternatives
+
+  - id: alternatives_ready
+    type: human_checkpoint
+    prompt: "Review generated alternatives. [A]ccept set, [R]egenerate with feedback?"
+    on_A: alternatives_accepted
+    on_R: generate_alternatives
+
+  - id: alternatives_accepted
+    type: terminal
+    action: "Alternatives accepted. Proceed with trade-off analysis."
+
+termination: [alternatives_accepted, max_steps_exceeded]

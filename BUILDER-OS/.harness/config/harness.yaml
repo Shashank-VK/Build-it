@@ -1,0 +1,87 @@
+# Master Harness Configuration
+# Superior OS v2.0 (superset of deve v1.0)
+
+harness:
+  version: "2.0.0"
+  name: "superior-os-harness"
+  description: >
+    OS + harness for a single developer working with AI.
+    Deve v1.0 core (loop rails, 6 gates, ABAC, sandbox) plus
+    engineering-depth skills, subagents, eval gates, and
+    evidence-carrying verification. Behavior contract: ../how-to-use/.
+
+loop_engineering:
+  max_steps_global: 15
+  debounce_identical_calls: true
+  require_deterministic_termination: true
+  self_certification_blocked: true
+
+tiers:
+  tiny:
+    model_effort: small
+    gates_skipped: [4, 6]
+    evidence: secret-scan only
+  default:
+    model_effort: medium
+    gates_skipped: []
+  high-stakes:
+    model_effort: big
+    fcar_mandatory: true
+    independent_reimplementation: true
+    eval_gate: true
+
+os:
+  lifecycle_version: "2.0"
+  gates: [1, 2, 3, 4, 5, 6]
+  fcar_required_for_gate_4: true
+  adversarial_review_mechanism: "fresh_context_rubric"
+  evidence_gates:
+    coverage_gate: "scripts/coverage_gate.py"
+    claim_check: "scripts/claim_check.py"
+
+workflows:
+  enabled:
+    - working-backwards
+    - scope-gate
+    - alternatives-generator
+    - failure-mode-analyzer
+    - launch-checklist-runner
+    - deploy-monitor
+    - postmortem-opener
+    - stakes-classifier
+    - unknown-first-sorter
+    - build-verify
+    - test-and-verify
+    - migration-safeguard
+    - refactor-safely
+    - eval-gate
+
+skills:
+  count: 25
+  registry: ".harness/skills/index.json"
+  fcar_reviewer: "always_fresh_context_mandatory"
+
+subagents:
+  - coder
+  - explorer
+  - planner
+  - reviewer
+
+telemetry:
+  config: ".harness/telemetry/litellm-config.yaml"
+  observability: ".harness/telemetry/langfuse-config.json"
+  budget_enforcement: enforced (see scripts/spend-log.sh)
+
+security:
+  pre_tool_guard: ".harness/hooks/pre_tool_guard.py"
+  post_tool_linter: ".harness/hooks/post_tool_linter.py"
+  secret_scan: "scripts/secret-scan.sh"
+  cedar_policies: ".harness/permissions/policies.cedar"
+  presets: ".harness/permissions/presets.json"
+  sandbox: ".harness/sandbox/gate.sh"
+
+fetch_policy:
+  max_concurrent_per_worker: 5
+  max_concurrent_global: 40
+  max_per_hostname: 2
+  log: "build-log evidence table (URL + HTTP + date); failures queued, never invented"

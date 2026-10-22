@@ -1,0 +1,97 @@
+# Taskfile.yml — Superior OS v2.0 Task Runner
+# Install: https://taskfile.dev
+
+version: "3"
+
+tasks:
+  verify:
+    desc: "Run all verification gates: lint + tests + secrets + coverage + claims"
+    cmds:
+      - bash scripts/verify.sh
+
+  test:
+    desc: "Run test suite (exits non-zero on first failure)"
+    cmds:
+      - python3 -B -m pytest -p no:cacheprovider scripts/ -x -q
+
+  lint:
+    desc: "Run linter on Python files"
+    cmds:
+      - |
+        if python3 -m flake8 --version >/dev/null 2>&1; then
+          python3 -m flake8 .harness/hooks/ scripts/ --max-line-length=100
+        elif python3 -m ruff --version >/dev/null 2>&1; then
+          python3 -m ruff check .harness/hooks/ scripts/
+        else
+          echo "[lint] ERROR: neither flake8 nor ruff is installed. Install with: pip install flake8" >&2
+          exit 1
+        fi
+
+  secret-scan:
+    desc: "Scan for hardcoded secrets"
+    cmds:
+      - bash scripts/secret-scan.sh
+
+  coverage-gate:
+    desc: "Require test receipts for changed behavior (see os/EVIDENCE.md)"
+    cmds:
+      - python3 scripts/coverage_gate.py
+
+  claim-check:
+    desc: "Require URL+HTTP+date evidence rows for external claims in build-log"
+    cmds:
+      - python3 scripts/claim_check.py
+
+  sandbox:
+    desc: "Run command in sandbox isolation. Usage: task sandbox -- <command>"
+    cmds:
+      - bash .harness/sandbox/gate.sh "{{.CLI_ARGS}}"
+
+  setup:
+    desc: "Download-once first-run provisioning (idempotent; safe to re-run)"
+    cmds:
+      - bash scripts/setup.sh
+
+  adopt:
+    desc: "Tag an existing project to this OS copy. Usage: task adopt -- <project-path>"
+    cmds:
+      - python3 scripts/tag_project.py "{{.CLI_ARGS}}"
+
+  eval-gate:
+    desc: "Run eval suite for AI features and OS integrity (exit 0 required)"
+    cmds:
+      - python3 -B -m pytest -p no:cacheprovider evals/ -q
+
+  doctor:
+    desc: "Diagnose a stuck loop: last identical calls, step count, quarantine"
+    cmds:
+      - 'echo "[doctor] Check: (1) identical tool+args repeated? (IAL) (2) steps > 15? (3) quarantine/ entries unresolved? (4) LiteLLM spend log."'
+
+  skills-list:
+    desc: "List all registered skills"
+    cmds:
+      - python3 -c "import json; [print(s['name'],'-',s['trigger']) for s in json.load(open('.harness/skills/index.json'))['skills']]"
+
+  fcar:
+    desc: "Reminder to run FCAR in a fresh context. Usage: task fcar -- <artifact-path>"
+    cmds:
+      - 'echo "[FCAR] Fresh Context Adversarial Review"'
+      - 'echo "[FCAR] MANDATORY: Open a new AI conversation. No memory of artifact creation permitted."'
+      - 'echo "[FCAR] Artifact: {{.CLI_ARGS}}"'
+      - 'echo "[FCAR] System prompt is in: .harness/skills/fcar-reviewer/SKILL.md"'
+      - 'echo "[FCAR] Rubric is in: os/fcar-rubric.md"'
+
+  new-project:
+    desc: "Initialize a new project. Usage: task new-project -- <project-name>"
+    cmds:
+      - mkdir -p "projects/{{.CLI_ARGS}}"
+      - cp os/artifacts/pitch-template.md "projects/{{.CLI_ARGS}}/pitch.md"
+      - cp os/artifacts/build-log-template.md "projects/{{.CLI_ARGS}}/build-log.md"
+      - python3 scripts/tag_project.py "projects/{{.CLI_ARGS}}"
+      - echo "[new-project] Created projects/{{.CLI_ARGS}}/"
+      - echo "[new-project] Next steps:"
+      - echo "  1. Open projects/{{.CLI_ARGS}}/pitch.md"
+      - echo "  2. Set your appetite (days/hours) BEFORE writing the solution"
+      - echo "  3. Run Working Backwards workflow if you have not written the PR/FAQ yet"
+      - echo "  4. Fill in the Pitch document"
+      - 'echo "  5. Gate 3: Honestly ask yourself ''can I build this in [appetite]?''"'

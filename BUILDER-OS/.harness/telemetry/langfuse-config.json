@@ -1,0 +1,14 @@
+{
+  "version": "2.0",
+  "description": "Langfuse LLM observability. Values from environment; nothing secret in repo.",
+  "endpoints": {
+    "host": "${LANGFUSE_HOST}",
+    "public_key": "${LANGFUSE_PUBLIC_KEY}",
+    "secret_key": "${LANGFUSE_SECRET_KEY}"
+  },
+  "tracing": {
+    "sample_rate": 1.0,
+    "redact_credentials": true,
+    "tag_tiers": ["tiny", "default", "high-stakes"]
+  }
+}

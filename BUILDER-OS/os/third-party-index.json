@@ -1,0 +1,227 @@
+{
+ "version": "2.0",
+ "entries": [
+  {
+   "name": "Leonxlnx/taste-skill",
+   "kind": "skill",
+   "trigger": "design taste, anti-slop frontend",
+   "source": "https://github.com/Leonxlnx/taste-skill"
+  },
+  {
+   "name": "anthropics/skills",
+   "kind": "skill",
+   "trigger": "official Anthropic skills incl. document family",
+   "source": "https://github.com/anthropics/skills"
+  },
+  {
+   "name": "vercel-labs/agent-skills",
+   "kind": "skill",
+   "trigger": "Vercel agent skills",
+   "source": "https://github.com/vercel-labs/agent-skills"
+  },
+  {
+   "name": "vercel-labs/skills",
+   "kind": "skill",
+   "trigger": "Vercel skills second location",
+   "source": "https://github.com/vercel-labs/skills"
+  },
+  {
+   "name": "mattpocock/skills",
+   "kind": "skill",
+   "trigger": "community skill collection",
+   "source": "https://github.com/mattpocock/skills"
+  },
+  {
+   "name": "trailofbits/skills",
+   "kind": "skill",
+   "trigger": "security-focused skills",
+   "source": "https://github.com/trailofbits/skills"
+  },
+  {
+   "name": "supabase/agent-skills",
+   "kind": "skill",
+   "trigger": "Supabase agent skills",
+   "source": "https://github.com/supabase/agent-skills"
+  },
+  {
+   "name": "openai/skills",
+   "kind": "skill",
+   "trigger": "OpenAI skills",
+   "source": "https://github.com/openai/skills"
+  },
+  {
+   "name": "cloudflare/skills",
+   "kind": "skill",
+   "trigger": "Cloudflare skills",
+   "source": "https://github.com/cloudflare/skills"
+  },
+  {
+   "name": "obra/superpowers",
+   "kind": "skill",
+   "trigger": "superpowers skill system",
+   "source": "https://github.com/obra/superpowers"
+  },
+  {
+   "name": "greensock/gsap-skills",
+   "kind": "skill",
+   "trigger": "GSAP animation skills",
+   "source": "https://github.com/greensock/gsap-skills"
+  },
+  {
+   "name": "stripe/ai",
+   "kind": "skill",
+   "trigger": "Stripe AI tooling",
+   "source": "https://github.com/stripe/ai"
+  },
+  {
+   "name": "skillcreatorai/Awesome-Agent-Skills",
+   "kind": "skill",
+   "trigger": "awesome-list index",
+   "source": "https://github.com/skillcreatorai/Awesome-Agent-Skills"
+  },
+  {
+   "name": "VoltAgent/awesome-agent-skills",
+   "kind": "skill",
+   "trigger": "awesome-list index",
+   "source": "https://github.com/VoltAgent/awesome-agent-skills"
+  },
+  {
+   "name": "agent-ecosystem/skill-validator",
+   "kind": "skill",
+   "trigger": "skill spec validation",
+   "source": "https://github.com/agent-ecosystem/skill-validator"
+  },
+  {
+   "name": "alephic-ai/skref",
+   "kind": "skill",
+   "trigger": "skill reference tooling",
+   "source": "https://github.com/alephic-ai/skref"
+  },
+  {
+   "name": "cravenceiling/skill-kit",
+   "kind": "skill",
+   "trigger": "skill kit tooling",
+   "source": "https://github.com/cravenceiling/skill-kit"
+  },
+  {
+   "name": "ginaecho/skill-quartermaster",
+   "kind": "skill",
+   "trigger": "skill management",
+   "source": "https://github.com/ginaecho/skill-quartermaster"
+  },
+  {
+   "name": "JuanJoseGonGi/skill-compact",
+   "kind": "skill",
+   "trigger": "skill compaction",
+   "source": "https://github.com/JuanJoseGonGi/skill-compact"
+  },
+  {
+   "name": "prateek/skills-janitor",
+   "kind": "skill",
+   "trigger": "skill cleanup",
+   "source": "https://github.com/prateek/skills-janitor"
+  },
+  {
+   "name": "rooftop-Owl/skill-factory",
+   "kind": "skill",
+   "trigger": "skill scaffolding",
+   "source": "https://github.com/rooftop-Owl/skill-factory"
+  },
+  {
+   "name": "github-mcp-server",
+   "kind": "mcp",
+   "trigger": "GitHub issues/PRs/Actions",
+   "source": "https://github.com/github/github-mcp-server"
+  },
+  {
+   "name": "brave-search-mcp-server",
+   "kind": "mcp",
+   "trigger": "web search grounding",
+   "source": "https://github.com/brave/brave-search-mcp-server"
+  },
+  {
+   "name": "sentry-mcp",
+   "kind": "mcp",
+   "trigger": "error tracking",
+   "source": "https://github.com/getsentry/sentry-mcp"
+  },
+  {
+   "name": "playwright-mcp",
+   "kind": "mcp",
+   "trigger": "browser automation",
+   "source": "https://github.com/microsoft/playwright-mcp"
+  },
+  {
+   "name": "docker/mcp-servers",
+   "kind": "mcp",
+   "trigger": "container tools",
+   "source": "https://github.com/docker/mcp-servers"
+  },
+  {
+   "name": "upstash/context7",
+   "kind": "mcp",
+   "trigger": "library docs grounding",
+   "source": "https://github.com/upstash/context7"
+  },
+  {
+   "name": "stripe/agent-toolkit",
+   "kind": "mcp",
+   "trigger": "payments tooling",
+   "source": "https://github.com/stripe/agent-toolkit"
+  },
+  {
+   "name": "mcp-server-kubernetes",
+   "kind": "mcp",
+   "trigger": "K8s tools",
+   "source": "https://github.com/Flux159/mcp-server-kubernetes"
+  },
+  {
+   "name": "mcp-use",
+   "kind": "mcp",
+   "trigger": "MCP client framework",
+   "source": "https://github.com/mcp-use/mcp-use"
+  },
+  {
+   "name": "modelcontextprotocol/servers",
+   "kind": "mcp-spec",
+   "trigger": "build-your-own MCP path",
+   "source": "https://github.com/modelcontextprotocol/servers"
+  },
+  {
+   "name": "modelcontextprotocol/inspector",
+   "kind": "mcp-spec",
+   "trigger": "build-your-own MCP path",
+   "source": "https://github.com/modelcontextprotocol/inspector"
+  },
+  {
+   "name": "modelcontextprotocol/typescript-sdk",
+   "kind": "mcp-spec",
+   "trigger": "build-your-own MCP path",
+   "source": "https://github.com/modelcontextprotocol/typescript-sdk"
+  },
+  {
+   "name": "modelcontextprotocol/python-sdk",
+   "kind": "mcp-spec",
+   "trigger": "build-your-own MCP path",
+   "source": "https://github.com/modelcontextprotocol/python-sdk"
+  },
+  {
+   "name": "modelcontextprotocol/go-sdk",
+   "kind": "mcp-spec",
+   "trigger": "build-your-own MCP path",
+   "source": "https://github.com/modelcontextprotocol/go-sdk"
+  },
+  {
+   "name": "modelcontextprotocol/rust-sdk",
+   "kind": "mcp-spec",
+   "trigger": "build-your-own MCP path",
+   "source": "https://github.com/modelcontextprotocol/rust-sdk"
+  },
+  {
+   "name": "modelcontextprotocol/csharp-sdk",
+   "kind": "mcp-spec",
+   "trigger": "build-your-own MCP path",
+   "source": "https://github.com/modelcontextprotocol/csharp-sdk"
+  }
+ ]
+}
