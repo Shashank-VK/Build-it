@@ -1,0 +1,102 @@
+{
+  "version": "2.0",
+  "description": "Progressive-disclosure skill registry: name + trigger per skill, full SKILL.md loaded on demand.",
+  "skills": [
+    {
+      "name": "working-backwards",
+      "trigger": "new idea, PR/FAQ, press release"
+    },
+    {
+      "name": "scope-gate",
+      "trigger": "task vs Non-Goals conflict check"
+    },
+    {
+      "name": "alternatives-generator",
+      "trigger": "before committing to a design"
+    },
+    {
+      "name": "failure-mode-analyzer",
+      "trigger": "new external dependency/API/DB"
+    },
+    {
+      "name": "fcar-reviewer",
+      "trigger": "Gate 4 design review, always fresh context"
+    },
+    {
+      "name": "launch-checklist-runner",
+      "trigger": "pre-deploy Gate 6 checks"
+    },
+    {
+      "name": "postmortem-opener",
+      "trigger": "incident, 3-section postmortem"
+    },
+    {
+      "name": "stakes-classifier",
+      "trigger": "classify change HIGH/MEDIUM/LOW stakes"
+    },
+    {
+      "name": "unknown-first-sorter",
+      "trigger": "order scopes uphill-first"
+    },
+    {
+      "name": "01-repo-surveyor-map",
+      "trigger": "explore repo, map codebase"
+    },
+    {
+      "name": "02-git-worktree-isolation",
+      "trigger": "parallel agents, isolated worktree"
+    },
+    {
+      "name": "03-context-compaction-pruner",
+      "trigger": "long session, compress context"
+    },
+    {
+      "name": "07-api-contract-first",
+      "trigger": "new API, schema first"
+    },
+    {
+      "name": "08-database-schema-architect",
+      "trigger": "new tables, 3NF modeling"
+    },
+    {
+      "name": "09-docker-sandbox-runner",
+      "trigger": "untrusted code, sandbox"
+    },
+    {
+      "name": "11-litellm-router-admin",
+      "trigger": "model routing, failover"
+    },
+    {
+      "name": "21-tdd-red-green-refactor",
+      "trigger": "code change, test first"
+    },
+    {
+      "name": "22-playwright-e2e-matrix",
+      "trigger": "browser E2E matrix"
+    },
+    {
+      "name": "23-pytest-fixture-factory",
+      "trigger": "test fixtures"
+    },
+    {
+      "name": "26-systematic-rca",
+      "trigger": "bug, root-cause analysis"
+    },
+    {
+      "name": "31-owasp-top10-vuln-scanner",
+      "trigger": "security review, OWASP"
+    },
+    {
+      "name": "32-secrets-entropy-sanitizer",
+      "trigger": "credential scan"
+    },
+    {
+      "name": "35-cryptography-safe-patterns",
+      "trigger": "crypto, safe patterns"
+    },
+    {
+      "name": "36-grill-me-socratic-planner",
+      "trigger": "requirements interview"
+    }
+  ]
+}

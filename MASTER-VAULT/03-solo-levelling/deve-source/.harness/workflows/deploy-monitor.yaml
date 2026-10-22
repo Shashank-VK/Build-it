@@ -1,0 +1,53 @@
+# Deployment Monitor Workflow State Machine
+# Solo AI Product Engineering System v1.0
+# Source: Netflix Canary / Automated Rollback Philosophy
+
+name: deploy-monitor
+version: "1.0"
+max_steps: 6
+on_exceed_max_steps: fatal_error
+
+states:
+  - id: deploy_start
+    type: input
+    next: verify_rollback_threshold
+
+  - id: verify_rollback_threshold
+    type: verification
+    check: "Rollback threshold committed in launch checklist"
+    on_missing: fatal_error
+    next: execute_deploy
+
+  - id: execute_deploy
+    type: system_action
+    action: promote_release
+    next: monitor_window
+
+  - id: monitor_window
+    type: automated_action
+    tool: monitor_metric
+    parameters:
+      window_minutes: 10
+    next: check_metric
+
+  - id: check_metric
+    type: branch
+    condition: "metric.threshold_crossed == true"
+    on_true: trigger_rollback
+    on_false: deploy_stable
+
+  - id: trigger_rollback
+    type: automated_action
+    action: execute_precommitted_rollback
+    description: "Threshold exceeded. Rolling back immediately without deliberation."
+    next: rollback_complete
+
+  - id: rollback_complete
+    type: terminal
+    action: "Rollback completed. Trigger Workflow 7 (Postmortem Opener)."
+
+  - id: deploy_stable
+    type: terminal
+    action: "10-minute window clean. Deployment stable. Continue 24h background watch."
+
+termination: [deploy_stable, rollback_complete, max_steps_exceeded]

@@ -1,0 +1,48 @@
+# FCAR Review Workflow State Machine
+# Solo AI Product Engineering System v1.0
+# Source: Phase 14 adversarial review mechanism
+
+name: fcar-review
+version: "1.0"
+max_steps: 6
+on_exceed_max_steps: fatal_error
+
+states:
+  - id: receive_artifact
+    type: input
+    next: clear_context
+
+  - id: clear_context
+    type: system_action
+    action: explicit_context_clear
+    description: "Clear ALL context from artifact creation. No memory of authoring process permitted."
+    next: run_fcar
+
+  - id: run_fcar
+    type: ai_action
+    skill: fcar-reviewer
+    output: rubric_results
+    next: evaluate
+
+  - id: evaluate
+    type: branch
+    condition: rubric_results.overall_pass
+    on_true: gate_passed
+    on_false: gate_failed
+
+  - id: gate_passed
+    type: terminal
+    gate: "Gate 4 PASSED"
+
+  - id: gate_failed
+    type: human_checkpoint
+    prompt: "Gate 4 FAILED. Failed items: {rubric_results.failures}. [R]evise artifact and re-run, [W]aive with documented exception?"
+    on_R: receive_artifact
+    on_W: waive_with_exception
+
+  - id: waive_with_exception
+    type: human_action
+    description: "Human writes exception text directly into the artifact. Exception is permanent and visible."
+    next: gate_passed
+
+termination: [gate_passed, max_steps_exceeded]

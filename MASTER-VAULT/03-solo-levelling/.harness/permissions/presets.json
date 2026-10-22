@@ -1,0 +1,38 @@
+{
+  "version": "1.0",
+  "description": "Role-based tool access presets per project archetype. Applied by harness at session start. Solo AI Product Engineering System v1.0",
+  "archetypes": {
+    "C1-ProductEngineering": {
+      "description": "User-facing product with UI, database, and APIs",
+      "allowed_tools": ["read_file", "write_file", "bash:read", "bash:test", "bash:lint", "web_search"],
+      "hitl_escalation_triggers": ["bash:git commit", "bash:deploy", "bash:write:schema"],
+      "filesystem_read": "workspace",
+      "filesystem_write": "designated_paths_only",
+      "network": "allow_egress_for_research"
+    },
+    "C2-DataMLOps": {
+      "description": "Data pipeline, ML training, batch processing",
+      "allowed_tools": ["read_file", "write_file", "bash:read", "bash:test", "bash:python"],
+      "hitl_escalation_triggers": ["bash:delete", "bash:overwrite_dataset", "bash:model_deploy"],
+      "filesystem_read": "workspace",
+      "filesystem_write": "designated_paths_only",
+      "network": "allow_egress_for_data_fetch"
+    },
+    "C3-PersonalAutomation": {
+      "description": "Headless scripts and personal tooling with no external users",
+      "allowed_tools": ["read_file", "write_file", "bash:read", "bash:test"],
+      "hitl_escalation_triggers": ["bash:cron_install", "bash:systemd_enable"],
+      "filesystem_read": "workspace",
+      "filesystem_write": "designated_paths_only",
+      "network": "allow_egress_restricted"
+    },
+    "C4-AgenticResearch": {
+      "description": "AI research, agent experiments, multi-model workflows",
+      "allowed_tools": ["read_file", "write_file", "bash:read", "bash:test", "web_search"],
+      "hitl_escalation_triggers": ["bash:agent_deploy", "bash:model_api_bulk"],
+      "filesystem_read": "workspace",
+      "filesystem_write": "designated_paths_only",
+      "network": "allow_egress"
+    }
+  }
+}

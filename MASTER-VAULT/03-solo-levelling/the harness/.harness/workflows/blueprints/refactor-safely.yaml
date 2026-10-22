@@ -1,0 +1,70 @@
+version: "1.0.0"
+name: "refactor-safely"
+description: "Safe, atomic refactoring workflow with git worktree isolation, AST symbol impact analysis, TDD verification at each step, and automated rollback."
+trigger:
+  - "refactor"
+  - "strangler_migration"
+timeout_seconds: 600
+isolation: "git_worktree"
+
+steps:
+  - id: "baseline_verification"
+    name: "Assert Green Baseline on Current Trunk"
+    command: "pytest tests/ -q --maxfail=1"
+    timeout_seconds: 60
+    on_failure: "abort"
+    required: true
+
+  - id: "isolate_worktree"
+    name: "Create Ephemeral Git Worktree"
+    depends_on: ["baseline_verification"]
+    command: "git worktree add -b refactor-branch .worktrees/refactor-sandbox HEAD"
+    timeout_seconds: 30
+    on_failure: "abort"
+    required: true
+
+  - id: "ast_impact_analysis"
+    name: "Survey AST Symbols & Call Graph Impact"
+    depends_on: ["isolate_worktree"]
+    command: "python3 .harness/skills/01-repo-surveyor-map/scripts/survey_repo.py --target src/"
+    timeout_seconds: 45
+    on_failure: "abort"
+    required: true
+
+  - id: "apply_refactor_step"
+    name: "Execute Atomic Code Refactor"
+    depends_on: ["ast_impact_analysis"]
+    agent: "coder"
+    timeout_seconds: 180
+    on_failure: "compensate"
+    required: true
+
+  - id: "verify_regression"
+    name: "Run Full Regression & Type Check Suite"
+    depends_on: ["apply_refactor_step"]
+    command: "pytest tests/ -q && ruff check src/ && mypy --strict src/"
+    timeout_seconds: 90
+    on_failure: "compensate"
+    required: true
+
+  - id: "peer_review"
+    name: "Automated Staff Review Gate"
+    depends_on: ["verify_regression"]
+    agent: "reviewer"
+    timeout_seconds: 90
+    on_failure: "compensate"
+    required: true
+
+  - id: "merge_worktree"
+    name: "Squash & Fast-Forward Merge Worktree to Main Branch"
+    depends_on: ["peer_review"]
+    command: "git merge --ff-only refactor-branch && git worktree remove .worktrees/refactor-sandbox"
+    timeout_seconds: 30
+    on_failure: "compensate"
+    required: true
+
+compensation:
+  on_failure:
+    - "echo '[REFACTOR ROLLBACK] Refactoring failed verification. Removing worktree sandbox...'"
+    - "git worktree remove --force .worktrees/refactor-sandbox 2>/dev/null || true"
+    - "git branch -D refactor-branch 2>/dev/null || true"

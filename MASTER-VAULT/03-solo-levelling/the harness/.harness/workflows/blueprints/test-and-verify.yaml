@@ -1,0 +1,35 @@
+version: "1.0.0"
+name: "test-and-verify"
+description: "Deterministic test & lint pipeline enforcing TDD Red-Green assertions, coverage thresholds, and type checks (CAP-04, CAP-32)."
+trigger:
+  - "test"
+  - "pr_validation"
+timeout_seconds: 240
+
+steps:
+  - id: "lint"
+    name: "Python & TypeScript Linter"
+    command: "ruff check . && (test ! -f tsconfig.json || npx eslint src/)"
+    timeout_seconds: 45
+    on_failure: "abort"
+
+  - id: "typecheck"
+    name: "Strict Static Type Check"
+    depends_on: ["lint"]
+    command: "mypy --strict src/ && (test ! -f tsconfig.json || npx tsc --noEmit)"
+    timeout_seconds: 60
+    on_failure: "abort"
+
+  - id: "unit_tests"
+    name: "Unit Test Execution with Fail-Fast"
+    depends_on: ["typecheck"]
+    command: "pytest tests/unit -v --maxfail=1"
+    timeout_seconds: 90
+    on_failure: "abort"
+
+  - id: "integration_tests"
+    name: "Integration & E2E Verification"
+    depends_on: ["unit_tests"]
+    command: "pytest tests/integration -v --maxfail=1"
+    timeout_seconds: 120
+    on_failure: "abort"

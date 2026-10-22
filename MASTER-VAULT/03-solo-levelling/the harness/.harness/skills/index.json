@@ -1,0 +1,568 @@
+{
+  "version": "1.0.0",
+  "total_skills": 40,
+  "skills": [
+    {
+      "id": "01",
+      "name": "repo-surveyor-map",
+      "domain": "Codebase Exploration",
+      "path": ".harness/skills/01-repo-surveyor-map/SKILL.md",
+      "description": "Generates architectural maps, entry-point graphs, and module boundaries before code modifications.",
+      "tier": "Essential",
+      "triggers": [
+        "explore repo",
+        "map codebase",
+        "understand architecture",
+        "survey project",
+        "analyze repository structure"
+      ]
+    },
+    {
+      "id": "02",
+      "name": "github-issue-pr-triage",
+      "domain": "Codebase Exploration",
+      "path": ".harness/skills/02-github-issue-pr-triage/SKILL.md",
+      "description": "Ingests PR diffs and issue threads, preparing decomposition checklists.",
+      "tier": "Essential",
+      "triggers": [
+        "triage issue",
+        "review pr description",
+        "parse issue thread",
+        "prepare pr checklist"
+      ]
+    },
+    {
+      "id": "03",
+      "name": "ast-symbol-navigator",
+      "domain": "Codebase Exploration",
+      "path": ".harness/skills/03-ast-symbol-navigator/SKILL.md",
+      "description": "Traces symbol definitions, call hierarchies, and interfaces via AST.",
+      "tier": "Essential",
+      "triggers": [
+        "trace symbol",
+        "find callers",
+        "find references",
+        "inspect ast hierarchy"
+      ]
+    },
+    {
+      "id": "04",
+      "name": "git-archeologist-blame",
+      "domain": "Codebase Exploration",
+      "path": ".harness/skills/04-git-archeologist-blame/SKILL.md",
+      "description": "Reconstructs historical intent from commit logs, PRs, and git blame.",
+      "tier": "Recommended",
+      "triggers": [
+        "git blame",
+        "why was this written",
+        "commit history search",
+        "archeology"
+      ]
+    },
+    {
+      "id": "05",
+      "name": "dependency-license-auditor",
+      "domain": "Codebase Exploration",
+      "path": ".harness/skills/05-dependency-license-auditor/SKILL.md",
+      "description": "Scans package manifests for license compliance and supply-chain health.",
+      "tier": "Recommended",
+      "triggers": [
+        "audit licenses",
+        "check dependencies",
+        "verify license compliance",
+        "scan vulnerabilities"
+      ]
+    },
+    {
+      "id": "06",
+      "name": "domain-driven-design-modeler",
+      "domain": "Architecture & Design",
+      "path": ".harness/skills/06-domain-driven-design/SKILL.md",
+      "description": "Models aggregate roots, value objects, and bounded contexts.",
+      "tier": "Recommended",
+      "triggers": [
+        "model domain",
+        "design bounded context",
+        "define aggregate root",
+        "ddd design"
+      ]
+    },
+    {
+      "id": "07",
+      "name": "api-contract-first-design",
+      "domain": "Architecture & Design",
+      "path": ".harness/skills/07-api-contract-first/SKILL.md",
+      "description": "Drafts and validates OpenAPI 3.1 / Protobuf specifications.",
+      "tier": "Essential",
+      "triggers": [
+        "design api",
+        "draft openapi spec",
+        "create protobuf",
+        "api contract first"
+      ]
+    },
+    {
+      "id": "08",
+      "name": "database-schema-architect",
+      "domain": "Architecture & Design",
+      "path": ".harness/skills/08-database-schema-architect/SKILL.md",
+      "description": "Models normalized schemas, indexes, and zero-downtime migrations.",
+      "tier": "Essential",
+      "triggers": [
+        "design schema",
+        "create migration",
+        "optimize database indexes",
+        "database architect"
+      ]
+    },
+    {
+      "id": "09",
+      "name": "microservices-event-stormer",
+      "domain": "Architecture & Design",
+      "path": ".harness/skills/09-event-stormer/SKILL.md",
+      "description": "Designs idempotent message schemas, dead-letter queues, and outbox patterns.",
+      "tier": "Recommended",
+      "triggers": [
+        "design event schema",
+        "event storming",
+        "kafka outbox pattern",
+        "message broker design"
+      ]
+    },
+    {
+      "id": "10",
+      "name": "caching-strategy-designer",
+      "domain": "Architecture & Design",
+      "path": ".harness/skills/10-caching-strategy/SKILL.md",
+      "description": "Designs L1/L2/L3 multi-tier caching, stampede prevention, and TTL policies.",
+      "tier": "Recommended",
+      "triggers": [
+        "design cache",
+        "redis caching strategy",
+        "prevent cache stampede",
+        "ttl cache policy"
+      ]
+    },
+    {
+      "id": "11",
+      "name": "litellm-router-admin",
+      "domain": "Integration & Extensibility",
+      "path": ".harness/skills/11-litellm-router-admin/SKILL.md",
+      "description": "Operates LiteLLM Proxy Gateway for dynamic model routing, fallbacks, rate limiting, and spend auditing.",
+      "tier": "Essential",
+      "triggers": [
+        "model routing",
+        "litellm",
+        "API gateway",
+        "rate limit",
+        "model fallback"
+      ]
+    },
+    {
+      "id": "12",
+      "name": "tailwind-shadcn-ui-builder",
+      "domain": "Frontend & Web UI",
+      "path": ".harness/skills/12-tailwind-shadcn-ui/SKILL.md",
+      "description": "Generates accessible UI components based on Radix and Tailwind CSS.",
+      "tier": "Essential",
+      "triggers": [
+        "build shadcn component",
+        "tailwind ui styling",
+        "accessible radix component"
+      ]
+    },
+    {
+      "id": "13",
+      "name": "wcag-accessibility-audit",
+      "domain": "Frontend & Web UI",
+      "path": ".harness/skills/13-wcag-accessibility/SKILL.md",
+      "description": "Audits DOM for ARIA labels, semantic landmarks, and WCAG 2.2 rules.",
+      "tier": "Essential",
+      "triggers": [
+        "audit accessibility",
+        "wcag audit",
+        "check aria labels",
+        "keyboard navigation test"
+      ]
+    },
+    {
+      "id": "14",
+      "name": "state-machine-xstate-architect",
+      "domain": "Frontend & Web UI",
+      "path": ".harness/skills/14-state-machine-xstate/SKILL.md",
+      "description": "Models complex interactive state with deterministic finite state machines.",
+      "tier": "Recommended",
+      "triggers": [
+        "design state machine",
+        "xstate model",
+        "finite state machine ui"
+      ]
+    },
+    {
+      "id": "15",
+      "name": "web-performance-core-web-vitals",
+      "domain": "Frontend & Web UI",
+      "path": ".harness/skills/15-core-web-vitals/SKILL.md",
+      "description": "Analyzes bundle sizes, tree-shaking, layout shifts, and LCP/INP/CLS metrics.",
+      "tier": "Recommended",
+      "triggers": [
+        "analyze web performance",
+        "core web vitals audit",
+        "shrink bundle size",
+        "optimize lcp"
+      ]
+    },
+    {
+      "id": "16",
+      "name": "fastapi-async-backend-engine",
+      "domain": "Backend & Distributed",
+      "path": ".harness/skills/16-fastapi-async/SKILL.md",
+      "description": "Builds async Python services with Pydantic v2 validation and pooling.",
+      "tier": "Essential",
+      "triggers": [
+        "build fastapi service",
+        "async python backend",
+        "pydantic v2 schema",
+        "asyncpg pooling"
+      ]
+    },
+    {
+      "id": "17",
+      "name": "go-concurrency-patterns",
+      "domain": "Backend & Distributed",
+      "path": ".harness/skills/17-go-concurrency/SKILL.md",
+      "description": "Implements worker pools, channels, and errgroup context cancellation.",
+      "tier": "Essential",
+      "triggers": [
+        "go concurrency",
+        "golang worker pool",
+        "errgroup pipeline",
+        "channel synchronization"
+      ]
+    },
+    {
+      "id": "18",
+      "name": "distributed-transaction-saga",
+      "domain": "Backend & Distributed",
+      "path": ".harness/skills/18-distributed-saga/SKILL.md",
+      "description": "Implements orchestrator/choreography Sagas with compensating actions.",
+      "tier": "Recommended",
+      "triggers": [
+        "saga pattern",
+        "distributed transaction",
+        "compensating transaction",
+        "orchestrator saga"
+      ]
+    },
+    {
+      "id": "19",
+      "name": "auth-oauth2-jwt-sentinel",
+      "domain": "Backend & Distributed",
+      "path": ".harness/skills/19-auth-oauth2-jwt/SKILL.md",
+      "description": "Implements PKCE flows, short-lived JWTs, rotating refresh tokens, RBAC.",
+      "tier": "Essential",
+      "triggers": [
+        "implement oauth2",
+        "jwt authentication",
+        "pkce flow",
+        "refresh token rotation"
+      ]
+    },
+    {
+      "id": "20",
+      "name": "rate-limiting-circuit-breaker",
+      "domain": "Backend & Distributed",
+      "path": ".harness/skills/20-rate-limiting-breaker/SKILL.md",
+      "description": "Implements sliding-window token buckets and circuit breaker fallbacks.",
+      "tier": "Recommended",
+      "triggers": [
+        "rate limiting",
+        "token bucket",
+        "circuit breaker",
+        "resilience fallback"
+      ]
+    },
+    {
+      "id": "21",
+      "name": "tdd-red-green-refactor-loop",
+      "domain": "Testing & QA",
+      "path": ".harness/skills/21-tdd-red-green-refactor/SKILL.md",
+      "description": "Forces failing test first, minimal passing code, and clean refactoring.",
+      "tier": "Essential",
+      "triggers": [
+        "implement feature",
+        "fix bug",
+        "add test",
+        "refactor function",
+        "tdd loop"
+      ]
+    },
+    {
+      "id": "22",
+      "name": "playwright-e2e-matrix",
+      "domain": "Testing & QA",
+      "path": ".harness/skills/22-playwright-e2e-matrix/SKILL.md",
+      "description": "Creates flake-free browser tests with auto-waiting locators and mocking.",
+      "tier": "Essential",
+      "triggers": [
+        "e2e test",
+        "browser test",
+        "playwright",
+        "UI automation"
+      ]
+    },
+    {
+      "id": "23",
+      "name": "pytest-fixture-factory",
+      "domain": "Testing & QA",
+      "path": ".harness/skills/23-pytest-fixture-factory/SKILL.md",
+      "description": "Generates scoped fixtures, parametrized matrices, and DB isolation.",
+      "tier": "Essential",
+      "triggers": [
+        "pytest fixture",
+        "parametrized test",
+        "db isolation fixture",
+        "pytest mock"
+      ]
+    },
+    {
+      "id": "24",
+      "name": "mutation-testing-sentinel",
+      "domain": "Testing & QA",
+      "path": ".harness/skills/24-mutation-testing/SKILL.md",
+      "description": "Mutates source code to verify test suites catch regressions.",
+      "tier": "Recommended",
+      "triggers": [
+        "mutation testing",
+        "verify test suite quality",
+        "stryker mutation",
+        "mutmut"
+      ]
+    },
+    {
+      "id": "25",
+      "name": "k6-load-chaos-test",
+      "domain": "Testing & QA",
+      "path": ".harness/skills/25-k6-load-chaos/SKILL.md",
+      "description": "Generates virtual-user load profiles, stress tests, and fault injection.",
+      "tier": "Optional",
+      "triggers": [
+        "k6 load test",
+        "stress test api",
+        "chaos test",
+        "latency threshold benchmark"
+      ]
+    },
+    {
+      "id": "26",
+      "name": "systematic-root-cause-rca",
+      "domain": "Debugging & Diagnostics",
+      "path": ".harness/skills/26-systematic-rca/SKILL.md",
+      "description": "Executes 5-Whys hypothesis testing, delta debugging, and minimal reproductions.",
+      "tier": "Essential",
+      "triggers": [
+        "root cause analysis",
+        "debug regression",
+        "rca hypothesis testing",
+        "delta debugging"
+      ]
+    },
+    {
+      "id": "27",
+      "name": "memory-leak-heap-profiler",
+      "domain": "Debugging & Diagnostics",
+      "path": ".harness/skills/27-memory-leak-profiler/SKILL.md",
+      "description": "Compares heap snapshots to detect uncollected closures and buffer leaks.",
+      "tier": "Recommended",
+      "triggers": [
+        "profile heap",
+        "find memory leak",
+        "analyze memory dump",
+        "closure memory leak"
+      ]
+    },
+    {
+      "id": "28",
+      "name": "opentelemetry-distributed-tracer",
+      "domain": "Debugging & Diagnostics",
+      "path": ".harness/skills/28-opentelemetry-tracer/SKILL.md",
+      "description": "Instruments code with spans and metrics to isolate high-latency hops.",
+      "tier": "Recommended",
+      "triggers": [
+        "opentelemetry tracing",
+        "trace span instrumentation",
+        "latency diagnosis",
+        "distributed trace"
+      ]
+    },
+    {
+      "id": "29",
+      "name": "sql-explain-query-optimizer",
+      "domain": "Debugging & Diagnostics",
+      "path": ".harness/skills/29-sql-explain-optimizer/SKILL.md",
+      "description": "Analyzes EXPLAIN plans, eliminates sequential scans, and fixes N+1 loops.",
+      "tier": "Essential",
+      "triggers": [
+        "explain analyze",
+        "optimize sql query",
+        "fix n+1 query",
+        "eliminate sequential scan"
+      ]
+    },
+    {
+      "id": "30",
+      "name": "log-anomaly-pattern-triage",
+      "domain": "Debugging & Diagnostics",
+      "path": ".harness/skills/30-log-anomaly-triage/SKILL.md",
+      "description": "Clusters stack traces and extracts root cause error lines from log spam.",
+      "tier": "Recommended",
+      "triggers": [
+        "triage logs",
+        "cluster stack traces",
+        "parse error log",
+        "extract root error"
+      ]
+    },
+    {
+      "id": "31",
+      "name": "owasp-top10-vuln-scanner",
+      "domain": "Security & Hardening",
+      "path": ".harness/skills/31-owasp-top10-vuln-scanner/SKILL.md",
+      "description": "Scans for SQLi, XSS, SSRF, IDOR, path traversal, command injection.",
+      "tier": "Essential",
+      "triggers": [
+        "owasp scan",
+        "security review",
+        "check sqli xss",
+        "ssrf vulnerability audit"
+      ]
+    },
+    {
+      "id": "32",
+      "name": "secrets-entropy-sanitizer",
+      "domain": "Security & Hardening",
+      "path": ".harness/skills/32-secrets-entropy-sanitizer/SKILL.md",
+      "description": "Detects high-entropy strings, API keys, and cloud credentials before commit.",
+      "tier": "Essential",
+      "triggers": [
+        "scan secrets",
+        "check api keys",
+        "entropy audit",
+        "gitleaks scan"
+      ]
+    },
+    {
+      "id": "33",
+      "name": "rbac-least-privilege-audit",
+      "domain": "Security & Hardening",
+      "path": ".harness/skills/33-rbac-privilege-audit/SKILL.md",
+      "description": "Audits API endpoints and DB access policies for non-escalatable roles.",
+      "tier": "Recommended",
+      "triggers": [
+        "audit rbac",
+        "least privilege review",
+        "check endpoint permissions",
+        "iam audit"
+      ]
+    },
+    {
+      "id": "34",
+      "name": "dockerfile-distroless-hardener",
+      "domain": "Security & Hardening",
+      "path": ".harness/skills/34-dockerfile-distroless-hardener/SKILL.md",
+      "description": "Converts container images to minimal, non-root, multi-stage distroless images with CIS benchmark compliance.",
+      "tier": "Recommended",
+      "triggers": [
+        "harden dockerfile",
+        "distroless container",
+        "non-root docker",
+        "cis container audit"
+      ]
+    },
+    {
+      "id": "35",
+      "name": "cryptography-safe-patterns",
+      "domain": "Security & Hardening",
+      "path": ".harness/skills/35-cryptography-safe-patterns/SKILL.md",
+      "description": "Enforces modern crypto primitives (AES-256-GCM, Argon2id, Ed25519) and bans deprecated algorithms.",
+      "tier": "Essential",
+      "triggers": [
+        "crypto audit",
+        "enforce aes-256-gcm",
+        "argon2id password hashing",
+        "ban md5 sha1"
+      ]
+    },
+    {
+      "id": "36",
+      "name": "grill-me-socratic-planner",
+      "domain": "Meta-Agentic Workflow",
+      "path": ".harness/skills/36-grill-me-socratic-planner/SKILL.md",
+      "description": "Proactively interviews the user about ambiguous requirements, edge cases, and design trade-offs before coding.",
+      "tier": "Essential",
+      "triggers": [
+        "plan this",
+        "before we start",
+        "clarify requirements",
+        "what do you need",
+        "interview me"
+      ]
+    },
+    {
+      "id": "37",
+      "name": "atomic-safe-refactoring-engine",
+      "domain": "Meta-Agentic Workflow",
+      "path": ".harness/skills/37-atomic-refactoring/SKILL.md",
+      "description": "Plans complex multi-file refactors in isolated, reversible, non-breaking atomic steps backed by tests.",
+      "tier": "Essential",
+      "triggers": [
+        "atomic refactor",
+        "multi-file refactor plan",
+        "mikado refactoring",
+        "reversible steps"
+      ]
+    },
+    {
+      "id": "38",
+      "name": "conventional-semantic-release",
+      "domain": "Meta-Agentic Workflow",
+      "path": ".harness/skills/38-conventional-semantic-release/SKILL.md",
+      "description": "Formats commit messages according to specification (feat:, fix:) and calculates SemVer increments.",
+      "tier": "Recommended",
+      "triggers": [
+        "conventional commit",
+        "semver release",
+        "changelog generate",
+        "semantic release"
+      ]
+    },
+    {
+      "id": "39",
+      "name": "pr-review-staff-engineer",
+      "domain": "Meta-Agentic Workflow",
+      "path": ".harness/skills/39-pr-review-staff/SKILL.md",
+      "description": "Reviews PR diffs for logic bugs, race conditions, naming clarity, docstrings, and maintainability.",
+      "tier": "Essential",
+      "triggers": [
+        "review pr diff",
+        "staff code review",
+        "find concurrency bugs",
+        "code review checklist"
+      ]
+    },
+    {
+      "id": "40",
+      "name": "harness-loop-self-healer",
+      "domain": "Meta-Agentic Workflow",
+      "path": ".harness/skills/40-loop-self-healer/SKILL.md",
+      "description": "Detects repetitive error loops, forces tool input variation, compacts context, and escalates if stuck.",
+      "tier": "Essential",
+      "triggers": [
+        "self heal error loop",
+        "stuck loop detection",
+        "agent recovery",
+        "context compaction"
+      ]
+    }
+  ]
+}

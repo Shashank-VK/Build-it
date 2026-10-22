@@ -1,0 +1,40 @@
+# Lefthook Git Security & Quality Gate (GAP-MAT-02 / CAP-20 / CAP-37)
+# Documentation: https://github.com/evilmartians/lefthook
+
+pre-commit:
+  parallel: true
+  commands:
+    gitleaks:
+      tags:
+        - security
+        - secrets
+      run: gitleaks protect --staged --verbose --redact
+
+    ruff:
+      tags:
+        - lint
+        - format
+      glob: "*.py"
+      run: ruff check {staged_files} && ruff format --check {staged_files}
+
+    pre-tool-guard:
+      tags:
+        - security
+        - guard
+      env:
+        STDIN_JSON: "{staged_files}"
+      run: echo "$STDIN_JSON" | python3 .harness/hooks/pre_tool_guard.py --mode=pre-commit
+
+    unit-tests:
+      tags:
+        - test
+        - quality
+      run: pytest tests/unit -q --maxfail=3
+
+post-commit:
+  commands:
+    update-log:
+      tags:
+        - audit
+        - changelog
+      run: git log -1 --format="%H %ai %s" >> update.md

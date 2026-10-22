@@ -1,0 +1,40 @@
+# Stakes Classifier Workflow State Machine
+# Solo AI Product Engineering System v1.0
+# Source: Phase 12/13 High-Stakes Code Path Isolation
+
+name: stakes-classifier
+version: "1.0"
+max_steps: 4
+on_exceed_max_steps: fatal_error
+
+states:
+  - id: receive_change
+    type: input
+    next: classify_stakes
+
+  - id: classify_stakes
+    type: ai_action
+    skill: stakes-classifier
+    output: stakes_verdict
+    next: route_tier
+
+  - id: route_tier
+    type: branch
+    condition: stakes_verdict.tier
+    on_LOW: low_tier_approval
+    on_MEDIUM: medium_tier_review
+    on_HIGH: high_tier_reimplementation
+
+  - id: low_tier_approval
+    type: terminal
+    action: "AI-first, cursory human review permitted."
+
+  - id: medium_tier_review
+    type: terminal
+    action: "AI-assisted, careful human line-by-line review required."
+
+  - id: high_tier_reimplementation
+    type: terminal
+    action: "HIGH-STAKES PATH: Independent human re-implementation and comparison required before merge."
+
+termination: [low_tier_approval, medium_tier_review, high_tier_reimplementation, max_steps_exceeded]

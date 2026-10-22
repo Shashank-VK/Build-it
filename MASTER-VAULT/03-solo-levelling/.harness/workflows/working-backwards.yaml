@@ -1,0 +1,38 @@
+# Working Backwards Workflow State Machine
+# Solo AI Product Engineering System v1.0
+# Source: Amazon PR/FAQ process (Working Backwards, Bryar & Carr 2021)
+
+name: working-backwards
+version: "1.0"
+max_steps: 5
+on_exceed_max_steps: fatal_error
+
+states:
+  - id: receive_idea
+    type: input
+    next: draft_prfaq
+
+  - id: draft_prfaq
+    type: ai_action
+    skill: working-backwards
+    output: prfaq_draft
+    next: human_review
+
+  - id: human_review
+    type: human_checkpoint
+    prompt: "PR/FAQ draft and customer challenge ready. [R]evise (loop back), [P]roceed to Pitch, [K]ill idea?"
+    on_R: draft_prfaq
+    on_P: complete
+    on_K: killed
+
+  - id: complete
+    type: terminal
+    gate: "Gate 2 PASSED"
+    creates_artifact: true
+    artifact_type: prfaq
+
+  - id: killed
+    type: terminal
+    action: "Log reason for killing in one paragraph. Archive pitch stub."
+
+termination: [complete, killed, max_steps_exceeded]

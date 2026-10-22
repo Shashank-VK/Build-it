@@ -1,0 +1,121 @@
+# MCP Tool Definitions
+# Solo AI Product Engineering System v1.0
+
+version: "1.0"
+
+tools:
+  - name: create_artifact
+    description: "Creates a typed project artifact in the repository with standard header."
+    parameters:
+      type: object
+      required: [artifact_type, project_name, content]
+      properties:
+        artifact_type:
+          type: string
+          enum: [prfaq, pitch, design-note, launch-checklist, postmortem, build-log]
+        project_name:
+          type: string
+        content:
+          type: string
+        appetite_days:
+          type: integer
+        continues_from:
+          type: string
+
+  - name: check_non_goals
+    description: "Checks whether a proposed task conflicts with the project Non-Goals list."
+    parameters:
+      type: object
+      required: [task_description, non_goals_list]
+      properties:
+        task_description:
+          type: string
+        non_goals_list:
+          type: array
+          items:
+            type: string
+    returns:
+      pass:
+        type: boolean
+      conflict_explanation:
+        type: string
+
+  - name: evaluate_against_rubric
+    description: "Runs FCAR: evaluates an artifact against the locked rubric in a fresh context."
+    parameters:
+      type: object
+      required: [artifact_content]
+      properties:
+        artifact_content:
+          type: string
+    returns:
+      results:
+        type: array
+        items:
+          rubric_item:
+            type: string
+          pass:
+            type: boolean
+          evidence:
+            type: string
+      overall_pass:
+        type: boolean
+
+  - name: monitor_metric
+    description: "Monitors a deployment metric and alerts if rollback threshold is crossed."
+    parameters:
+      type: object
+      required: [metric_name, threshold_pct, window_minutes]
+      properties:
+        metric_name:
+          type: string
+        threshold_pct:
+          type: number
+        window_minutes:
+          type: integer
+    returns:
+      threshold_crossed:
+        type: boolean
+      max_value_observed:
+        type: number
+      recommendation:
+        type: string
+
+  - name: create_postmortem
+    description: "Generates a 3-section postmortem draft from an incident description."
+    parameters:
+      type: object
+      required: [incident_description, timeline_events, severity]
+      properties:
+        incident_description:
+          type: string
+        timeline_events:
+          type: array
+        severity:
+          type: string
+          enum: [customer-visible-downtime, data-issue, performance-degradation, security, other]
+    returns:
+      draft_postmortem:
+        type: string
+
+servers:
+  # Real MCP servers (stdio). Versions pinned; see MCP_SECURITY.md before enabling networked ones.
+  - name: filesystem
+    transport: stdio
+    command: npx
+    args: ["-y", "@modelcontextprotocol/server-filesystem", "/workspace"]
+  - name: playwright
+    transport: stdio
+    command: npx
+    args: ["-y", "@browsermcp/mcp"]
+    note: "smoke-only pinned version; full E2E via playwright-e2e-matrix skill"
+  - name: context7
+    transport: remote
+    url: "https://mcp.context7.com/mcp"
+    note: "remote alternative to npx @upstash/context7-mcp; pick one"
+  - name: github
+    transport: stdio
+    command: npx
+    args: ["-y", "@modelcontextprotocol/server-github"]
+    env: ["GITHUB_TOKEN"]
+    note: "requires token; default-deny without it"

@@ -1,0 +1,47 @@
+model_list:
+  # Primary High-Reasoning Tier
+  - model_name: coding-primary
+    litellm_params:
+      model: anthropic/claude-3-7-sonnet-20250219
+      api_key: "os.environ/ANTHROPIC_API_KEY"
+      rpm: 1000
+      tpm: 100000
+      max_retries: 3
+      timeout: 60
+
+  # Automatic Failover Tier (Triggered on 429/500/503 from Primary)
+  - model_name: coding-primary
+    litellm_params:
+      model: gemini/gemini-2.5-pro
+      api_key: "os.environ/GEMINI_API_KEY"
+      rpm: 1200
+      timeout: 60
+
+  # Fast Subagent & Triage Tier
+  - model_name: coding-fast
+    litellm_params:
+      model: anthropic/claude-3-5-haiku-20241022
+      api_key: "os.environ/ANTHROPIC_API_KEY"
+      rpm: 2000
+      tpm: 200000
+
+  # Local / Offline Fallback Tier (Zero API Cost)
+  - model_name: coding-local
+    litellm_params:
+      model: openai/deepseek-r1-distill-qwen-32b
+      api_base: "http://localhost:8000/v1"
+      api_key: "none"
+
+router_settings:
+  routing_strategy: "latency-based-routing"
+  num_retries: 3
+  timeout: 45
+  fallbacks:
+    - coding-primary: ["gemini/gemini-2.5-pro", "openai/gpt-4o", "coding-local"]
+
+general_settings:
+  # CAP-35 Hard Spend Caps
+  max_budget_per_session: 5.00       # Hard abort if single task spend exceeds $5.00 USD
+  max_budget_per_day: 50.00          # Daily team safety cap
+  alert_spend_threshold: 0.80        # Alert at 80% budget consumption
+  track_cost_per_token: true

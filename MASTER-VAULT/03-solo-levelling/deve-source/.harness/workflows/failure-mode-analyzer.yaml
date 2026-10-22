@@ -1,0 +1,34 @@
+# Failure Mode Analyzer Workflow State Machine
+# Solo AI Product Engineering System v1.0
+
+name: failure-mode-analyzer
+version: "1.0"
+max_steps: 4
+on_exceed_max_steps: fatal_error
+
+states:
+  - id: receive_design
+    type: input
+    next: analyze_failures
+
+  - id: analyze_failures
+    type: ai_action
+    skill: "failure-mode-analysis"
+    command: "analyze failure modes for: {design}"
+    next: review_risks
+
+  - id: review_risks
+    type: human_checkpoint
+    prompt: "Review failure modes and mitigations. [M]itigate, [A]ccept risks?"
+    on_M: mitigations_applied
+    on_A: risks_accepted
+
+  - id: mitigations_applied
+    type: terminal
+    action: "Mitigations documented. Proceed with hardened design."
+
+  - id: risks_accepted
+    type: terminal
+    action: "Risks explicitly accepted. Proceed with sign-off."
+
+termination: [mitigations_applied, risks_accepted, max_steps_exceeded]

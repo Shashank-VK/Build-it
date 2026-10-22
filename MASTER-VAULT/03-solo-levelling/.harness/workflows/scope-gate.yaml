@@ -1,0 +1,45 @@
+# Scope Gate Workflow State Machine
+# Solo AI Product Engineering System v1.0
+# Source: Basecamp Shape Up (Scope Hammer & No-gos enforcement)
+
+name: scope-gate
+version: "1.0"
+max_steps: 5
+on_exceed_max_steps: fatal_error
+
+states:
+  - id: receive_task
+    type: input
+    next: run_scope_check
+
+  - id: run_scope_check
+    type: automated_action
+    command: "python3 scripts/scope-check.py --task \"{task}\" --pitch \"{pitch_file}\""
+    next: evaluate_conflict
+
+  - id: evaluate_conflict
+    type: branch
+    condition: "scope_check.exit_code == 0"
+    on_true: task_approved
+    on_false: conflict_detected
+
+  - id: task_approved
+    type: terminal
+    action: "Task cleared against No-gos. Proceed with uphill/downhill sequencing."
+
+  - id: conflict_detected
+    type: human_checkpoint
+    prompt: "Scope conflict detected with Pitch No-gos. [D]rop task from scope, [A]mend pitch No-gos with documented reason?"
+    on_D: task_dropped
+    on_A: amend_pitch
+
+  - id: amend_pitch
+    type: human_action
+    description: "Human documents amendment reasoning directly in pitch.md before adding task."
+    next: task_approved
+
+  - id: task_dropped
+    type: terminal
+    action: "Task dropped to protect appetite."
+
+termination: [task_approved, task_dropped, max_steps_exceeded]

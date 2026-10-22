@@ -1,0 +1,51 @@
+# Valve — product engineering case study (flat org: the handbook vs. the receipts)
+
+Workstream: expansion-companies · Researched 2026-10-10 · Read-only research; no installation, ranking, or recommendation.
+
+## Scope notes
+Valve is included for the most famous organizational experiment in games: the 2012 "Handbook for New Employees" describing a company with no managers, where people self-organize into "cabals" and wheel their desks to projects. The evidence *for* the model is the handbook itself; the evidence *against* it is a stack of ex-employee accounts describing hidden hierarchy, stack ranking, and popularity contests. This file is primarily a narrative audit — the dismantling is the point.
+
+## 1. Forensic reconstruction — how the machine claims to work (and how witnesses say it works)
+
+### The handbook model (the claim)
+- Claim: Valve's 2012 handbook states: no managers, nobody "reports to" anybody else (founder/president Gabe Newell "isn't your manager"); people self-select into temporary multidisciplinary teams ("cabals"); hiring/firing decisions are peer-driven; the wheeled desk is the symbol — you literally roll to the project you choose. Label: **Verified** — the handbook PDF is public (slideshare copy fetched in research; github/chaoticgoodcomputing annotated copy). Confidence: high that this is what Valve *claims*.
+- Claim: The model is explicitly framed as "a fearless adventure in knowing what to do when no one's there telling you what to do." Label: **Verified** (handbook subtitle, via gamespot).
+
+### The witness model (the receipts)
+- Claim: Ex-hardware engineer **Jeri Ellsworth** (fired Feb 2013 with her AR hardware group): *"There is actually a hidden layer of powerful management structure in the company. And it felt a lot like High School. There are popular kids that have acquired power, then there's the trouble makers, and then everyone in between."* She describes being unable to hire (old-timers rejecting candidates for "culture fit"), understaffing "by a factor of 100," and a "witch hunt" against troublemakers. Label: **Corroborated** — Grey Area podcast interview reported by PCGamesN, MCV, Polygon, GameSpot (2013). Confidence: high that she said it; medium on generalizability (she was fired — motive to be critical — but see corroboration below).
+- Claim: **People Make Games** (investigative games journalism, ~2022): current and former employees describe stack ranking — annual peer-review meetings producing an overall employee ranking that determines pay — with no managers to calibrate criteria; employees gamed it by doing risky projects early in the year and safe ones near review time ("recency bias"). Two employees compared the workplace to *Lord of the Flies*. Label: **Corroborated** — pcgamer's report on the PMG video. Confidence: medium-high.
+- Claim: Ex-employee **Rich Geldreich** describes 'barons' allied with the executive arm and a culture of currying favor with sponsors; Glassdoor reviews call the review process a "popularity contest" and cite "opaque compensation breeding paranoia." Label: **Corroborated** — pcgamer (2018) roundup. Confidence: medium (anonymous/individual accounts, but convergent).
+- Claim: The 2017 "myth of the flat organization" analysis (billhunt.dev, via GitHub) argues flat structures reliably produce *informal* hierarchy that is less accountable than formal hierarchy. Label: **Corroborated** (secondary analysis). This is the theoretical frame the witness accounts fit.
+
+## 2. Postmortem record — failures attributable to the model
+- **The "Valve doesn't make games anymore" decade.** From ~2013–2018 Valve shipped almost no major games (the "Valve can't count to 3" era) while Steam printed money. The flat model, which requires individuals to *choose* risky game projects, systematically under-produced them — maintenance of Steam is safer for stack-ranked peers than a risky Half-Life 3. Label: **Inferred** — the output gap is **Corroborated** (public release history); the causal link to the org model is argued by PMG's reporting and the review-timing gaming evidence. Confidence: medium on causation.
+- **Hardware-team firings (Feb 2013):** Ellsworth's AR hardware group — the exact kind of long-horizon bet a flat org should enable — was fired in a sweep, with Ellsworth allowed to take the CastAR tech with her. The model couldn't protect its own bets from the hidden hierarchy. Label: **Corroborated** (gamespot, polygon).
+- **What changed:** Valve eventually *did* ship games again (Half-Life: Alyx 2020, etc.) — but no public evidence of org-model reform was found. The model persists, subsidized by Steam's ~30% platform cut. Label: **Corroborated** (release history) / **Inferred** (subsidy argument).
+
+## 3. Narrative audit — dismantling with receipts
+- **"No managers" vs. hidden management.** The handbook's core claim is directly contradicted by multiple witnesses describing a hidden power layer. The dismantling isn't that Valve lies — it's that *unacknowledged* hierarchy is worse than acknowledged hierarchy: formal managers can be appealed, evaluated, and replaced; "popular kids" can't. The transferable lesson: if you abolish formal structure, you don't abolish power — you abolish *accountability for* power. Label: **Inferred** (audit synthesis) on **Corroborated** witness accounts.
+- **Stack ranking + no managers = popularity contest.** This is the sharpest receipt: Valve combined the most political evaluation method (peer stack ranking, which even Microsoft abandoned) with the removal of the role (manager) that's supposed to de-bias it. The predictable result — recency gaming, favor-currying, risk-aversion near review time — is exactly what witnesses report. Any "flat" proposal that keeps stack ranking should be rejected on this evidence alone. Label: **Inferred** on **Corroborated** reporting.
+- **The Steam subsidy invalidates the experiment.** Valve's flatness has never been tested against market discipline — Steam's platform rents (~30% of PC game sales) fund everything. The org model might "work" only in the presence of a monopoly cash cow. Copying Valve's structure without Valve's rents is cargo-culting the *decor* (wheeled desks) while missing the *condition* (infinite money). This is the single most important audit point in the file. Label: **Inferred**; the Steam economics are **Corroborated** public knowledge.
+- **The handbook as recruiting artifact.** Read forensically, the handbook is *employer branding* — it selects for a specific personality (autonomous, political, risk-tolerant) and repels others. That's a legitimate hiring filter, but it shouldn't be mistaken for an org-design treatise. Label: **Inferred**.
+- **Negative evidence / steelman:** many Valve employees report loving it (positive Glassdoor reviews exist alongside the critical ones); the model demonstrably retains elite talent and produced Steam, the most successful PC gaming platform ever. The audit concedes: for senior, self-directed, financially-independent talent, it can be excellent. The claim being dismantled is *universality*, not *utility*.
+
+## Transferable lessons
+1. **Abolishing formal hierarchy creates informal hierarchy — budget for it.** If you go flat, design explicit mechanisms for power accountability (e.g., elected leads, recallable roles), or you'll get high-school cliques with commit access.
+2. **Never combine peer stack ranking with no managerial calibration.** It's the most political evaluation design known; the evidence predicts popularity contests and review-cycle gaming.
+3. **Check the subsidy.** Before copying any famous org model, ask what economic condition makes it survivable. Valve's is Steam rents; yours probably isn't.
+4. **Wheeled desks are decor.** Copy the decision rights and the money flows, not the furniture.
+5. **The handbook test:** any org document that describes only rights and never obligations, conflict resolution, or failure modes is marketing — read it as such.
+
+## Sources
+| ID | Claim | URL (verbatim) | Type | Author/Org | Pub date | Accessed | Confidence |
+|---|---|---|---|---|---|---|---|
+| VV1 | Handbook: no managers, cabals, wheeled desks ("fearless adventure…") | https://www.slideshare.net/slideshow/valve-handbook/12695372 | Primary (company artifact) | Valve | 2012 | 2026-10-10 | High (as claim) |
+| VV2 | Annotated handbook copy | https://github.com/chaoticgoodcomputing/blog/blob/HEAD/content/public/content/annotations/valve-handbook.md | Community (GitHub) | chaoticgoodcomputing | n.d. | 2026-10-10 | Medium |
+| VV3 | "Myth of the flat organization" analysis | https://github.com/krusynth/billhunt.dev/blob/HEAD/_posts/2017-06-12-the-myth-of-the-flat-organization.md | Secondary analysis (GitHub) | billhunt.dev | 2017 | 2026-10-10 | Medium |
+| VV4 | Ellsworth: hidden management layer, "high school," hiring blocks, understaffed 100× | https://www.pcgamesn.com/valve-not-entirely-without-management-ex-employee-says-it-felt-lot-high-school | First-hand (ex-employee via podcast) | PCGamesN | 2013 | 2026-10-10 | Medium-high |
+| VV5 | Same: "witch hunt," troublemakers, culture-fit rejections | https://www.polygon.com/2013/7/8/4503326/valve-hiring-and-firing-process-compared-to-high-school-cliques-by | First-hand (ex-employee) | Polygon | Jul 2013 | 2026-10-10 | Medium-high |
+| VV6 | People Make Games: stack ranking, review gaming, "Lord of the Flies" | https://www.pcgamer.com/valves-unusual-corporate-structure-causes-its-problems-report-suggests/ | Secondary (investigative video) | PC Gamer | ~2022 | 2026-10-10 | Medium-high |
+| VV7 | Geldreich 'barons'; Glassdoor "popularity contest" / paranoia | https://www.pcgamer.com/ex-valve-employee-describes-ruthless-industry-politics/ | First-hand + community | PC Gamer | 2018 | 2026-10-10 | Medium |
+| VV8 | Firing of Ellsworth's hardware group; handbook as "idealised view" | https://www.gamespot.com/articles/ex-valve-employee-blasts-the-company-for-feeling-like-high-school/1100-6411126/ | Contemporary reporting | GameSpot | 2013 | 2026-10-10 | Medium-high |
+
+**Gaps:** Current Valve org practices (not public); Gabe Newell's own defenses of the model (not pulled); Steam's exact economics (public estimates vary — the "subsidy" argument doesn't depend on the precise cut).

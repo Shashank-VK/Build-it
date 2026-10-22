@@ -1,0 +1,54 @@
+# Ref: contract `../how-to-use/04-commands-workflows.md`.
+# Launch Checklist Workflow State Machine
+# Solo AI Product Engineering System v1.0
+# Source: Google SRE Launch Checklist Standards
+
+name: launch-checklist
+version: "1.0"
+max_steps: 6
+on_exceed_max_steps: fatal_error
+
+states:
+  - id: initiate_precheck
+    type: input
+    next: run_secret_scan
+
+  - id: run_secret_scan
+    type: automated_action
+    command: "bash scripts/secret-scan.sh"
+    next: run_checklist
+
+  - id: run_checklist
+    type: ai_action
+    skill: launch-checklist-runner
+    output: checklist_results
+    next: evaluate_items
+
+  - id: evaluate_items
+    type: branch
+    condition: checklist_results.all_passed
+    on_true: gate_6_passed
+    on_false: checklist_blocked
+
+  - id: checklist_blocked
+    type: human_checkpoint
+    prompt: "Gate 6 Incomplete. Unmet items detected. [F]ix gaps and rerun, [W]aive with documented exception, [A]bort deploy?"
+    on_F: run_checklist
+    on_W: record_waiver
+    on_A: deploy_aborted
+
+  - id: record_waiver
+    type: human_action
+    description: "Developer writes explicit permanent waiver directly into the checklist artifact."
+    next: gate_6_passed
+
+  - id: gate_6_passed
+    type: terminal
+    gate: "Gate 6 PASSED"
+    action: "Deploy unlocked. Pre-commit rollback threshold before executing release."
+
+  - id: deploy_aborted
+    type: terminal
+    action: "Deployment cancelled. No changes promoted."
+
+termination: [gate_6_passed, deploy_aborted, max_steps_exceeded]

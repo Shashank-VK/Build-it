@@ -1,0 +1,16 @@
+{
+  "hooksFile": ".harness/hooks/hooks.json",
+  "mcpConfigFile": ".harness/mcp/mcp_servers.json",
+  "sandbox": {
+    "enabled": true,
+    "gateScript": ".harness/sandbox/gate.sh"
+  },
+  "permissions": {
+    "policyFile": ".harness/permissions/policies.cedar",
+    "presetsFile": ".harness/permissions/presets.json"
+  },
+  "telemetry": {
+    "litellmConfig": ".harness/telemetry/litellm-config.yaml",
+    "langfuseConfig": ".harness/telemetry/langfuse-config.json"
+  }
+}

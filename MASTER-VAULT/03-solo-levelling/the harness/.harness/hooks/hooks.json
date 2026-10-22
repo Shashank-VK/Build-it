@@ -1,0 +1,47 @@
+{
+  "version": "1.1.0",
+  "description": "Deterministic In-Process Agent Lifecycle Interceptors (CAP-20 / CAP-37) — GAP-SEC-04 hardened",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "run_command",
+        "command": "echo '{\"tool\":\"run_command\",\"input\":$TOOL_INPUT_JSON}' | python3 ${HARNESS_ROOT:-.}/.harness/hooks/pre_tool_guard.py",
+        "timeout_ms": 3000,
+        "description": "Block destructive commands (rm -rf /, mkfs, raw curl to sh) and unconfined paths. JSON payload via stdin — no shell-quoting injection surface."
+      },
+      {
+        "matcher": "write_to_file|replace_file_content",
+        "command": "echo '{\"tool\":\"file_write\",\"input\":$TOOL_INPUT_JSON}' | python3 ${HARNESS_ROOT:-.}/.harness/hooks/pre_tool_guard.py",
+        "timeout_ms": 2000,
+        "description": "Pre-flight secret leak and high-entropy credential scanner on file writes. JSON payload via stdin."
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "write_to_file|replace_file_content",
+        "command": "echo '{\"tool\":\"file_write\",\"output\":$TOOL_OUTPUT_JSON}' | python3 ${HARNESS_ROOT:-.}/.harness/hooks/post_tool_linter.py",
+        "timeout_ms": 5000,
+        "description": "Auto-format modified files (Ruff/Prettier) and inject AST syntax diagnostics into context. JSON payload via stdin."
+      }
+    ],
+    "pre_tool_call": [
+      {
+        "matcher": "run_command",
+        "command": "echo '{\"tool\":\"run_command\",\"input\":$TOOL_INPUT_JSON}' | python3 ${HARNESS_ROOT:-.}/.harness/hooks/pre_tool_guard.py",
+        "timeout_ms": 3000
+      },
+      {
+        "matcher": "write_to_file|replace_file_content",
+        "command": "echo '{\"tool\":\"file_write\",\"input\":$TOOL_INPUT_JSON}' | python3 ${HARNESS_ROOT:-.}/.harness/hooks/pre_tool_guard.py",
+        "timeout_ms": 2000
+      }
+    ],
+    "post_tool_call": [
+      {
+        "matcher": "write_to_file|replace_file_content",
+        "command": "echo '{\"tool\":\"file_write\",\"output\":$TOOL_OUTPUT_JSON}' | python3 ${HARNESS_ROOT:-.}/.harness/hooks/post_tool_linter.py",
+        "timeout_ms": 5000
+      }
+    ]
+  }
+}

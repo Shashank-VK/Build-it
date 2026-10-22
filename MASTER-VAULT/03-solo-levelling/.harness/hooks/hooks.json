@@ -1,0 +1,46 @@
+{
+  "version": "1.0",
+  "description": "Pre/post tool interceptors for Solo AI Product Engineering Harness - Solo AI Product Engineering System v1.0",
+  "pre_tool_hooks": [
+    {
+      "id": "security-guard",
+      "description": "Runs pre_tool_guard.py before every tool execution. Blocks dangerous patterns.",
+      "enabled": true,
+      "script": ".harness/hooks/pre_tool_guard.py",
+      "on_block": "throw_fatal_error",
+      "on_error": "throw_fatal_error"
+    },
+    {
+      "id": "checkpoint-before-destructive",
+      "description": "Requires [Y/n] human confirmation before file writes, git commits, deploys.",
+      "enabled": true,
+      "trigger_patterns": ["write_file", "bash:git commit", "bash:git push", "bash:deploy", "bash:kubectl apply"],
+      "action": "require_human_approval",
+      "prompt": "About to execute: {tool} {args}\nConfirm? [Y/n] "
+    },
+    {
+      "id": "ial-debounce",
+      "description": "Fatal error if identical tool+args called twice consecutively. Prevents Infinite Agentic Loops.",
+      "enabled": true,
+      "action": "check_identical_repeat",
+      "on_repeat": "throw_fatal_error",
+      "message": "IAL guard triggered: identical tool call repeated. Handing control back to developer."
+    }
+  ],
+  "post_tool_hooks": [
+    {
+      "id": "secret-scan-after-write",
+      "description": "Scans newly written files for hardcoded secrets immediately after write.",
+      "enabled": true,
+      "trigger": "write_file",
+      "script": "scripts/secret-scan.sh {filepath}",
+      "on_detect": "throw_fatal_error",
+      "message": "Hardcoded secret detected in written file. Aborting. Remove the secret before proceeding."
+    }
+  ],
+  "loop_rails": {
+    "max_steps": 15,
+    "on_exceed": "throw_fatal_error",
+    "message": "Loop rail exceeded: max_steps=15. Handing control back to developer."
+  }
+}

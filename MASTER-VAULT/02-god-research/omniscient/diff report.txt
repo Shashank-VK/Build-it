@@ -1,0 +1,1234 @@
+The Omniscient Resource Atlas: Master Taxonomy of Web Engineering, Agent Ecosystems, Design Systems, and Public Intelligence Repositories
+Architectural Foundations of the Agentic Engineering Shift
+The discipline of software engineering is undergoing a structural paradigm shift from passive developer toolchains to autonomous, agentic execution environments1. Historically, integrated development environments served as human-facing interfaces for file editing, syntax highlighting, and local compiler execution. In modern artificial intelligence engineering workflows, the development harness acts as an operational supervisor that mediates between statistical language models, formal type checkers, containerized sandboxes, and version control graphs1. This shift fundamentally alters how software components, architectural boundaries, and code verification must be managed1.
+Empirical evaluation reveals five foundational pillars required to achieve repeatable, non-hallucinatory software generation in autonomous workflows:
+Deterministic instructions that formally constrain the exploration space before model activation1.
+Explicit state boundaries that isolate ongoing task progress from ephemeral conversational context1.
+Machine-readable contracts that eliminate guesswork regarding application programming interfaces, component properties, and schema shapes3.
+Mechanical verification gates that reject code transitions lacking programmatic proof of correctness1.
+Resumable lifecycle handoffs that allow independent execution cycles to continue without state contamination1.
+Interoperability protocols such as Anthropic's Model Context Protocol (MCP) have emerged to standardize runtime tool dynamic discovery across varied agent hosts5. However, architectural analysis indicates that MCP is not a universal substitute for native command-line interfaces or file-based conventions4. High-throughput tool calls, low-latency AST inspections, and dense token-constrained documentation exchanges are frequently executed with greater reliability through optimized binary CLIs and local files than through JSON-RPC communication channels4.
+Consequently, modern engineering architectures require multi-tiered defense mechanisms1. These systems integrate externalized memory stores, local code knowledge graphs, multi-model adversarial deliberation, and isolated file sandboxes to mitigate context window decay, token bloat, and regression loops5.
+Deliverable A: Master Resource Index
+
+Resource Name
+Canonical Identifier / URL
+Primary Category
+Type
+Core Technical Capability
+Verification Status
+OpenViking
+volcengine/OpenViking
+[cite: 9, 10]
+Context & Memory
+Virtual FS Context Database
+L0/L1/L2 hierarchical context retrieval via viking:// URI protocol10
+Verified10
+Scrapling
+D4Vinci/Scrapling
+[cite: 12]
+Scraping & Research
+Python Framework
+DOM-similarity adaptive element tracking and auto-healing selectors12
+Verified12
+ChatDev 2.0 (DevAll)
+OpenBMB/ChatDev
+[cite: 14, 15]
+Multi-Agent Systems
+Multi-Agent Platform
+Zero-code heterogeneous multi-agent development and orchestration14
+Verified14
+Munder Difflin
+chaitanyagiri/munder-difflin
+[cite: 17, 18]
+Harness Engineering
+Desktop Agent Harness
+Multi-CLI terminal orchestration with mailbox message passing17
+Verified (Security Flagged)19
+Taste Skill
+Leonxlnx/taste-skill
+[cite: 20]
+Agent Skills
+SKILL.md Collection
+Layout variance dials and UI anti-slop rules for coding agents20
+Verified20
+Astryx
+facebook/astryx
+[cite: 4, 5]
+Design Systems
+React 19 / StyleX Library
+Agent-ready UI system with dense token CLI output (no MCP server)4
+Corrected4
+Strix
+usestrix/strix
+[cite: 22, 23]
+Security & Testing
+Agentic Security Scanner
+Graph-of-Agents penetration testing in ephemeral Docker environments22
+Verified22
+Everything Claude Code
+affaan-m/ECC
+[cite: 25]
+Harness Engineering
+Agent Harness & Optimization
+Multi-tier rules, subagent specs, and research-first execution pipeline25
+Verified25
+Ruflo
+ruvnet/ruflo
+[cite: 5, 8]
+Multi-Agent Systems
+Swarm Orchestrator
+High-scale swarm coordinator with adaptive HNSW vector memory5
+Verified5
+Firecrawl
+firecrawl/firecrawl
+[cite: 27]
+Scraping & Research
+Crawler Engine / API
+Distributed crawling turning dynamic JavaScript into LLM-ready Markdown27
+Verified27
+Eve
+vercel/eve
+[cite: 5, 8]
+Agent Frameworks
+Application Framework
+Filesystem-first durable AI agent engine with MicroVM sandboxes5
+Verified5
+DeepSec
+vercel/deepsec
+[cite: 5, 8]
+Security & Testing
+CLI Security Engine
+Multi-stage regex and LLM agent static security auditor5
+Verified5
+Graphify
+Graphify-Labs/graphify
+[cite: 5, 8]
+Codebase Intelligence
+AST Knowledge Graph
+Deterministic codebase-to-graph compiler without vector database overhead5
+Verified5
+Superpowers
+obra/superpowers
+[cite: 5, 6]
+Agent Skills
+SDLC Methodology
+Composable TDD, systematic debugging, and architectural verification skills5
+Verified5
+Context7
+upstash/context7
+[cite: 3, 6]
+Docs Context / MCP
+MCP Server
+Live, version-pinned library documentation extraction directly from source3
+Verified6
+GSD Core
+open-gsd/gsd-core
+[cite: 8, 29]
+Harness Engineering
+Spec Framework
+Community-audited spec-driven multi-agent harness replacing archived GSD8
+Corrected8
+Loop Engineering
+cobusgreyling/loop-engineering
+[cite: 5, 8]
+Harness Engineering
+CLI & Pattern Suite
+Scaffolding shell with gate policy enforcement and budget circuit breakers2
+Verified2
+Loopy
+Forward-Future/loopy
+[cite: 5, 8]
+Harness Engineering
+Agent Skill
+Pre-designed feedback loop catalog with execution receipt tracking2
+Verified2
+Claude-Mem
+thedotmack/claude-mem
+[cite: 5, 8]
+Context & Memory
+Memory Plugin
+Cross-session semantic memory extraction with native IDE hooks5
+Verified5
+System Prompts Leaks
+asgeirtj/system_prompts_leaks
+[cite: 5, 8]
+Prompt Archives
+Prompt Archive
+Curated public repository of extracted system prompts from frontier models5
+Verified5
+Laws of UX Skills
+keysjoao/laws-of-ux-skills
+[cite: 3]
+UI/UX Systems
+SKILL.md Collection
+Behavioral psychology design rules distilled into executable audit skills3
+Verified3
+Awesome Design MD
+VoltAgent/awesome-design-md
+[cite: 3]
+Design-to-Code
+Specification Catalog
+Standardized design token files grounding AI models in visual brand rules3
+Verified3
+React Three Start
+pmndrs/react-three-start
+[cite: 3]
+Creative Technologies
+Application Template
+Modular, file-based React Three Fiber meta-framework for 3D applications3
+Verified3
+LLM Council
+karpathy/llm-council
+[cite: 5, 7]
+Multi-Agent Systems
+Peer Review Engine
+Three-stage multi-model deliberation pipeline with anonymized peer ranking5
+Verified5
+Council Review / Skills
+ngmeyer/skills
+[cite: 5, 7]
+Multi-Agent Systems
+Deliberation Monorepo
+Multi-model review with devil's advocate and theatrical consensus detection5
+Corrected5
+Deliberation Plugin
+deliberation (awesome-opencode)6
+Multi-Agent Systems
+Agent Plugin / MCP
+Native OpenCode multi-model consensus plugin querying external frontier LLMs6
+Verified6
+OpenCode Dynamic Context Pruning
+Opencode-DCP/opencode-dynamic-context-pruning
+[cite: 6]
+Context & Memory
+Agent Plugin
+Semantic compression engine pruning repetitive calls and failed terminal traces1
+Verified6
+OpenCode Sandbox
+fabianlema/opencode-sandbox
+[cite: 6]
+Security & Isolation
+Docker Environment
+Dual-architecture container sandbox isolating tool operations from host OS6
+Verified6
+Worktree Helper
+kdcokenny/opencode-worktree
+[cite: 6]
+Harness Engineering
+Git Automation Plugin
+Automated git worktree isolation preventing main branch pollution6
+Verified6
+Self-Improving Skills
+okdk7788/opencode-self-improving-skills
+[cite: 1, 6]
+Self-Improvement
+Agent Plugin
+Closed-loop skill evolution extracting, refining, and testing SKILL.md files1
+Verified6
+Skill Optimizer
+hqhq1025/skill-optimizer
+[cite: 1, 6]
+Self-Improvement
+CLI Mining Toolkit
+History scanner mining repetitive developer workflows into structured skills1
+Verified6
+Skill Reaper
+thousandflowers/skillreaper
+[cite: 1, 6]
+Self-Improvement
+Telemetry Pruner
+Evidence-based pruning utility quarantining unused skills and MCP tools1
+Verified6
+Last 30 Days Skill
+mvanhorn/last30days-skill
+[cite: 5, 8]
+Scraping & Research
+Agent Skill
+Time-bounded research skill querying real-time web, social, and dev sources5
+Verified5
+OpenAPI MCP Codegen
+cnoe-io/openapi-mcp-codegen
+[cite: 3, 29]
+Backend APIs
+Protocol Generator
+Code generation pipeline converting OpenAPI specifications into MCP servers3
+Verified3
+Public APIs Catalog
+public-apis/public-apis
+[cite: 5, 8]
+Public Data / APIs
+Reference Directory
+Curated index of public application programming interfaces5
+Verified5
+OpenCode Workflows
+mark-hingston/opencode-workflows
+[cite: 6]
+Workflow Orchestration
+Mastra-Based Engine
+Deterministic, resumable workflow engine supporting five execution topologies6
+Verified6
+Open Conclave
+Open Conclave (awesome-opencode)6
+Multi-Agent Systems
+Agent Plugin
+Captain-moderated multi-agent debate platform converging on consensus6
+Verified6
+FlowDeck
+FlowDeck (awesome-opencode)6
+Workflow Orchestration
+Harness Plugin Bundle
+25-agent development suite featuring wave execution and patch trust gates6
+Verified6
+Envsitter Guard
+boxpositron/envsitter-guard
+[cite: 6]
+Security & Isolation
+Agent Plugin
+Runtime hook blocking agent read, edit, and write calls on .env* files6
+Verified6
+Prompt Injection Guard
+remorses/opencode-injection-guard
+[cite: 6]
+Security & Isolation
+Interceptor Plugin
+Real-time prompt injection analyzer screening tool outputs before ingestion6
+Verified6
+
+Deliverable B: Categorical Catalogs of the Web and AI Engineering Ecosystem
+Core Web Technologies and Browser Standards
+Modern web applications execute within highly standardized browser runtime environments governed by WHATWG and W3C specifications. Standard ECMAScript 2026 modules (ESM) form the baseline packaging format across browser contexts, web workers, and service worker threads. The browser platform exposes low-level primitive APIs including the Streams API, Web Workers, IndexedDB, and the Cache API for resilient client-side state persistence. High-throughput communication relies on HTTP/3 and WebTransport over QUIC, providing bidirectional, multiplexed transport that circumvents head-of-line blocking.
+WebAssembly (Wasm) functions as a high-performance compilation target for systems languages including Rust, C++, and Go, enabling browser-native cryptographic hashing, image processing, and abstract syntax tree parsing. Advanced browser interface capabilities rely on the Canvas API, WebGL 2.0, and WebGPU, which expose modern graphics pipeline architectures for compute-intensive tasks directly in web clients.
+Frontend Frameworks and Reactive Applications
+The frontend application layer has largely converged around component-based models that balance declarative developer ergonomics with fine-grained reactivity. React 19 establishes server components (RSC) and standard compiler optimizations, shifting stateful hydration boundaries to explicit server-driven streaming protocols. Meta-frameworks such as Next.js, Remix, Astro, and SvelteKit enforce file-based routing topologies and hybrid rendering capabilities—ranging from static site generation (SSG) to server-side rendering (SSR) and partial hydration (islands architecture).
+In parallel, frameworks including SolidJS and Svelte 5 utilize fine-grained reactive primitives (Signals) that eliminate virtual DOM diffing by updating targeted DOM nodes directly upon variable mutation. State management architectures distinguish local UI state (Zustand, Nano Stores) from asynchronous server cache states (TanStack Query, SWR). Data tables, rich text systems, and grid displays are increasingly constructed over headless primitives like TanStack Table, TipTap, and Lexical.
+UI Primitives, Component Registries, and Styling
+User interface design engineering has shifted away from monolithic, pre-styled CSS frameworks toward headless primitives that enforce WAI-ARIA compliance, keyboard navigation, and focus management while leaving visual styling open. Radix UI, React Aria, and Ark UI provide accessible behavioral foundations for complex elements like dialogs, popovers, and comboboxes.
+Component distribution has transitioned from distributed node modules toward open component registries, exemplified by shadcn/ui, where raw, unminified source code is injected directly into project repositories via automated CLI commands3. Styling solutions center on utility-first token frameworks like Tailwind CSS v4, which utilizes native CSS variables and lightningcss compilation, alongside compile-time CSS-in-JS libraries like StyleX and vanilla-extract that maintain zero runtime overhead while enforcing strict design token constraints3.
+Build Tools, Compilers, and Package Management
+Modern web compilation infrastructure has replaced legacy JavaScript-interpreted bundlers with native binaries implemented in Rust, Go, and Zig. Build tools including Vite, Turbopack, and Rspack utilize native ES module resolution during development while emitting heavily optimized, code-split bundles for production. Runtimes like Bun and Node.js (via native loader hooks) allow direct execution of TypeScript without external transpilation passes.
+Biome provides high-speed, unified Rust-based linting and formatting, displacing complex ESLint and Prettier setups. Monorepo workspace orchestration depends on tools such as Turborepo, Nx, and pnpm workspaces, which apply content-hash-based caching and directed acyclic graph task scheduling to ensure reproducible, parallelized builds across complex micro-frontends and full-stack services.
+Backend Frameworks, Application Servers, and Microservices
+Server-side engineering architectures span lightweight edge runtimes and structured enterprise application frameworks. Micro-frameworks such as Hono and Elysia execute across edge platforms (Cloudflare Workers, Fastly Compute, Deno, Bun) by adhering strictly to standard Web Fetch API conventions (Request, Response). Enterprise architectures in Node.js, Go, and Python utilize NestJS, Go Gin/Fiber, and FastAPI respectively to implement domain-driven architectural patterns with native dependency injection.
+Asynchronous inter-service communication and distributed background job queues leverage tools like BullMQ, Celery, and temporal workflow engines, while real-time bidirectional interfaces utilize Socket.io, native WebSockets, and Server-Sent Events (SSE) for low-overhead message broadcasting.
+Machine-Readable API Contracts and Service Gateways
+Robust autonomous agent development requires strict interface boundaries that prevent AI coding tools from inventing non-existent backend endpoints or request payloads3. Machine-readable contract specifications like OpenAPI 3.1, TypeSpec, and Protocol Buffers establish formal boundaries that auto-generate type-safe server routers, client SDKs, and validation pipelines3. Tools including Orval, openapi-typescript, and cnoe-io/openapi-mcp-codegen read raw API schemas to compile type-safe React Query hooks, runtime Zod validators, and dynamic MCP servers3. This setup allows coding agents to inspect verified endpoint surfaces deterministically before writing code3.
+
+Schema / Contract Protocol
+Primary Tooling
+Technical Output Format
+Agent Discovery Mechanism
+OpenAPI 3.1 / Swagger3
+cnoe-io/openapi-mcp-codegen
+[cite: 3, 29]
+JSON Schema / Tool Manifest
+Dynamic MCP Tool Proxy3
+TypeSpec (Microsoft)
+TypeSpec Compiler / Emitters
+OpenAPI 3.0 / C# / TypeScript
+Direct File Inspection / LSP
+gRPC / Protocol Buffers
+protoc / Connect-ES
+Binary Wire Spec / Typed Stubs
+Static Abstract Syntax Tree
+tRPC
+@trpc/server / @trpc/client
+TypeScript Type Graph
+Language Server Protocol (LSP)6
+
+Relational, Document, and Vector Persistence Systems
+Persistence infrastructure spans transactional relational databases, distributed document stores, and high-dimensional vector search engines. PostgreSQL remains the standard open-source relational database, augmented by extensions like pgvector for integrated similarity search. Cloud-native distributed architectures employ serverless relational systems such as Neon and PlanetScale, or open-source distributed document systems like MongoDB and Couchbase. Object-Relational Mapping (ORM) and query construction tools like Prisma, Drizzle ORM, and Kysely provide type-safe database access, automatic migration generation, and schema introspection. Specialized vector databases including Qdrant, Milvus, and Chroma provide standalone Hierarchical Navigable Small World (HNSW) indexing and scalar filtering designed specifically for retrieval-augmented generation (RAG)6.
+Application Services and External Capabilities
+Modern web applications integrate specialized third-party services that supply complex functional capabilities through managed APIs and SDKs:
+Authentication and identity platforms: Clerk, Supabase Auth, and Better Auth handle session cookies, multi-factor authentication, and OAuth handshakes.
+Payment processing: Stripe and Lemon Squeezy manage recurring billing, global tax compliance, and PCI-compliant checkout sessions.
+Transactional message delivery: Resend and Postmark provide programmatic email dispatch via clean REST endpoints and React email templates.
+Object storage infrastructure: AWS S3, Cloudflare R2, and MinIO supply scalable, S3-compatible blob storage for application media and static assets.
+Feature management: LaunchDarkly and PostHog manage progressive rollouts and client telemetry collection.
+Visual App Builders, Generators, and Low-Code Platforms
+AI-accelerated application scaffolding spans visual design canvases, low-code rapid application development platforms, and programmatic code generation engines. Platforms like v0 by Vercel, Lovable, Bolt.new, and Cursor Composer translate plain-language briefs or visual wireframes into fully realized component hierarchies, routing architectures, and database bindings. Visual site generators such as Webflow and Framer export production-grade static sites, while open-source internal tool platforms like ToolJet, Appsmith, and Refine allow teams to rapidly construct database-backed CRUD administration panels over standard relational schemas.
+Architectural References, Conventions, and Design Patterns
+Enterprise application stability depends on established software design patterns and repository conventions. Hexagonal architecture (Ports and Adapters) and clean architecture separate business logic from external frameworks, databases, and network adapters. Frontend architectures enforce clean boundaries using the Container/Presentational component pattern, custom hook composition, and colocation principles (placing styles, tests, and types alongside their respective component files). Monorepos organize code using the "Feature-Sliced Design" methodology or strict apps/ and packages/ workspace conventions, using tools like Turborepo and dependency graph analyzers to prevent circular imports across modules.
+UI/UX Design Systems and Guideline Repositories
+Design systems provide the structural conventions that govern visual components and digital interface guidelines:
+Corporate design systems: Carbon Design System (IBM), Polaris (Shopify), Material Design 3 (Google), and Atlassian Design System publish accessible design tokens, Figma libraries, and React component packages3.
+Universal design conventions: Jon Yablonski's Laws of UX documents 30+ cognitive heuristics (such as Hick's Law, Fitts's Law, and Jakob's Law) that define human-computer interaction standards3.
+Token standardization: The Design Tokens Community Group (DTCG) specification establishes vendor-neutral JSON schemas for design tokens, allowing cross-platform compilation between Figma variables, CSS custom properties, and native application styling3.
+Design-to-Code Engines and Asset Extraction
+Design-to-code pipelines bridge visual mockups with functional web components. Tools such as Figma's REST API and plugin ecosystems allow direct extraction of layer trees, vector paths, and layout constraints into structured design tokens and HTML/CSS representations. Image-to-interface models and screenshot-to-code tools process raster mockups into component markup20. Visual regression tools like Percy, Chromatic, and Playwright screenshot comparisons validate that generated user interfaces match intended design layouts without visual drift or responsive layout breakages1.
+Creative Graphics, 3D Web, and Shader Infrastructure
+High-performance visual experiences in modern web browsers rely on WebGL and WebGPU rendering layers. Three.js provides the standard scene-graph abstraction, while @react-three/fiber (R3F) and @react-three/drei bring declarative component models to 3D canvas composition3. The meta-framework pmndrs/react-three-start establishes file-based composition patterns that separate 3D scene elements (.scene.tsx) from standard DOM user interface layers (.dom.tsx), giving autonomous agents clear file boundaries to modify lighting, geometry, or camera controls without breaking complex render loops3. Vector animations are driven by GSAP, Framer Motion, and lightweight Rive web runtimes21.
+The Agent Skills Standard and Directory Repositories
+The Agent Skills open standard (agentskills.io) establishes an open, file-based convention for packaging reusable instructions, operational behaviors, and domain expertise for autonomous coding agents6. Each skill is defined within a dedicated directory containing a SKILL.md file featuring structured YAML frontmatter:
+
+
+
+YAML
+---
+name: interface-design-auditor
+description: Automatically evaluates user interface code for visual hierarchy, typography, and contrast compliance.
+---
+
+
+Major open-source skill libraries—including obra/superpowers, anthropics/skills, mattpocock/skills, and addyosmani/agent-skills—provide structured development workflows spanning test-driven development, automated pull request reviews, git worktree isolation, and accessibility audits5. Curated directories like VoltAgent/awesome-agent-skills categorize thousands of community and official skills across diverse engineering domains6.
+Model Context Protocol Specifications, Servers, and Adapters
+The Model Context Protocol (MCP), stewarded by Anthropic, establishes an open JSON-RPC 2.0 communication standard that connects coding agents with external execution tools, file repositories, and live data services5. MCP distinguishes three core capabilities: Tools (executable functions with typed JSON Schema parameters), Resources (read-only file or data streams identified by URIs), and Prompts (reusable parameterized workflows). Notable servers include upstash/context7 for fetching version-pinned library documentation, Playwright and Puppeteer MCP servers for headless browser automation, and database MCP proxies that safely expose SQL schemas to agents without human intervention1.
+Developer Coding Agents and Environment Extensions
+The autonomous coding agent landscape spans dedicated terminal CLIs, commercial IDE integrations, and extensible open-source desktop clients:
+OpenCode: An open-source, terminal-based AI software engineering environment supporting native plugin architectures, granular tool permission overrides, subagent topologies, and the Agent Skills specification5.
+Claude Code: Anthropic's agentic command-line tool, providing automated code search, terminal tool execution, PR creation, and interactive terminal workflows5.
+Cursor & Windsurf: Deeply integrated AI editor forks of VS Code that provide inline diff generation, semantic codebase indexing, and multi-file editing capabilities.
+Cline & Roo Code: Extensible VS Code extensions that run autonomous coding loops using local or cloud LLM endpoints with human-in-the-loop permission checkpoints.
+Multi-Agent Teams, Hierarchical Swarms, and Councils
+Autonomous multi-agent architectures distribute engineering tasks across networks of specialized agents rather than relying on a single prompt session5. Frameworks like ruvnet/ruflo implement hierarchical Queen/Worker swarms capable of coordinating dozens of specialist subagents over shared memory stores5. Deliberation engines—such as karpathy/llm-council and ngmeyer/skills—employ multi-model peer review, where proposals are evaluated by independent models through anonymized reviews, devil's-advocate passes, and consensus checks to catch hallucinations before code is written5.
+
+
+
+Task Brief
+   │
+   ▼
+Primary Agent ──► Initial Plan
+   │                  │
+   │                  ▼
+   │          Challenger Agent (Adversarial Critique)
+   │                  │
+   │                  ▼
+   └──────────► Arbiter Agent (Consensus Verdict)
+                      │
+                      ▼
+               Final Execution
+
+
+Harness Engineering, Execution Loops, and Session State
+Development harnesses manage long-running agent autonomy by establishing external state stores that survive context window resets1. Frameworks like walkinglabs/learn-harness-engineering divide harness responsibilities into five discrete subsystems: Instructions (AGENTS.md), Scope Boundaries (feature_list.json), State Tracking (claude-progress.md), Verification Commands (init.sh), and Lifecycle Handoffs1. Execution loop suites like cobusgreyling/loop-engineering and Forward-Future/loopy enforce bounded execution passes, budget circuit breakers, and path denylists, ensuring agents make measured progress without runaway API costs2.
+Context Compilers, Dynamic Pruning, and Memory Stores
+Context window management systems protect language models from token exhaustion, high latency, and context degradation1. Dynamic context pruning engines, such as Opencode-DCP, automatically strip duplicate tool execution logs, large error traces, and stale file reads before transmitting context to model providers1. Persistent memory engines like volcengine/OpenViking and thedotmack/claude-mem extract critical architectural decisions into local Markdown ledgers or vector databases, indexing them via specialized URI schemes for semantic retrieval across multiple sessions5.
+Repository Intelligence, AST Graphs, and Code Search
+Codebase intelligence tools map complex project structures so models can navigate multi-file architectures without stuffing entire codebases into token context5. Tools like Graphify-Labs/graphify parse project source code, database schemas, and documentation files via tree-sitter into local, deterministic knowledge graphs5. This setup enables agents to trace function call graphs, inheritance trees, and import dependencies without relying on external vector databases5. Complementary tools like ripgrep and ast-grep provide fast, syntax-aware structural code matching across large repositories.
+Web Crawling, Resilient Scraping, and Data Acquisition
+External data retrieval engines gather real-time documentation, public datasets, and competitive research5:
+Adaptive parsing: D4Vinci/Scrapling uses mathematical element-similarity algorithms to relocate mutated CSS and XPath selectors dynamically, allowing scrapers to survive frontend changes without human updates12.
+Distributed crawling: firecrawl/firecrawl crawls dynamic web applications, executes client-side JavaScript, bypasses anti-bot heuristics, and outputs structured, token-efficient Markdown for language model consumption27.
+Fast asynchronous fetching: Crawl4AI provides headless Chromium automation designed for deep web crawling and structured entity extraction.
+Quality Assurance, Browser Testing, and Verification
+Quality assurance pipelines ensure agent-generated code meets functional requirements before deployment1. Headless browser testing suites (Playwright, Puppeteer) automate end-to-end user journeys, capturing DOM trees, network waterfalls, and full-page screenshots to verify web applications1. Garry Tan's gstack maintains a persistent headless Chromium daemon, enabling agents to execute live browser QA passes via slash commands5. Unit testing frameworks (Vitest, Jest, Pytest) and visual regression suites provide deterministic exit codes that agent harnesses use to validate tasks automatically1.
+Application Security Testing, Sandboxing, and Isolation
+Autonomous code execution requires strict security sandboxing to protect host machines from arbitrary command execution, secret leaks, and prompt injection attacks6. Docker-based sandboxes (fabianlema/opencode-sandbox) isolate execution environments from local networks and host filesystems6. Dynamic penetration testing engines like usestrix/strix deploy autonomous "Graph of Agents" teams inside sandboxed containers to find and validate vulnerabilities by executing functional proofs-of-concept against running targets22. Static security tools like Vercel's DeepSec scan codebases for credential leaks, SQL injection, and OWASP Top 10 vulnerabilities before commit5.
+Cloud Infrastructure, Deployment, and Agent Telemetry
+Production cloud infrastructure for modern web applications leverages edge delivery networks, serverless compute, and container orchestration:
+Edge platforms: Vercel, Cloudflare, and AWS Lambda execute application logic close to end users with minimal cold start latency.
+Deployment previews: Automated branch deployments create ephemeral preview environments for every pull request, allowing verification of isolated feature changes before merging.
+Observability and telemetry: OpenTelemetry instrumentation engines and platforms like Langfuse capture user turns, token throughput, tool latencies, and agent execution paths, providing visibility into cost and failure modes across automation pipelines5.
+Technical SEO, Headless Content, and Digital Commerce
+Production web operations require automated optimization for search engine indexing and commercial transactions. Modern meta-frameworks automate dynamic sitemap compilation, canonical URL resolution, and JSON-LD structured data generation to ensure compliance with search standards and Core Web Vitals budgets. Headless content management systems (Sanity, Strapi) expose structured content schemas via GraphQL and REST endpoints, while headless commerce engines (Medusa, Shopify Storefront API) manage product catalogs, inventory synchronization, and localized checkout flows.
+Public API Catalogs and Ingestion Pipelines
+Public interface registries provide structured catalogs of external data sources and services. The public-apis/public-apis repository curates a comprehensive, categorized index of free, publicly accessible APIs, detailing authentication schemes, CORS policies, and base URL endpoints5. When cloned locally and indexed via repository intelligence tools, this catalog functions as an offline reference that allows coding agents to identify and integrate verified external APIs without hallucinating invalid service endpoints5.
+Deliverable C: Watchlist Investigation Register
+1. OpenViking
+Original Name Supplied: OpenViking9
+Matched Project: volcengine/OpenViking (ByteDance / Volcano Engine, open-source mirror LoicHmh/openviking)9
+Canonical URL: https://github.com/volcengine/OpenViking
+[cite: 10]
+Repository Files Inspected: crates/ov_cli/, docs/en/getting-started/, ov.conf, Cargo.toml, pyproject.toml, VLDB 2026 paper (arXiv:2605.29640)9
+Technical Architecture: An open-source context database developed by Volcengine that structures agent memory, skills, and project resources under a unified virtual filesystem using the viking:// URI scheme10. Implements a three-tier hierarchical context loading system: Level 0 (abstract summaries, ~100 tokens), Level 1 (structured overviews, ~2k tokens), and Level 2 (full raw data), allowing agents to evaluate file relevance before loading full content into context10.
+Capabilities: Recursive directory search, structural Trie-based index scoping, automatic session conversation extraction into Markdown, and multi-tenant access controls10.
+Usage Domain: Persistent memory and context management for autonomous coding agents10.
+Verified Inputs & Outputs: Ingests source code, Markdown documentation, and multimodal images; outputs filtered context segments, semantic search matches, and structured session summaries9.
+Integration Method: Python library (pip install openviking), Rust CLI (ov_cli), and local or hosted REST API service9.
+Compatibility: Claude Code, OpenAI Codex, OpenClaw, Cursor, Trae, OpenCode, Hermes Agent10.
+Dependencies: Python >= 3.10, Rust toolchain, external VLM and Embedding model endpoints (OpenAI or Doubao)9.
+Licensing: AGPLv3 for the main server; Apache 2.0 for ov_cli and examples10.
+Security & Limitations: High resource footprint for self-hosting; requires commercial multimodal embedding API access for complete indexing9.
+Verification Status: Verified10.
+2. PizzaBox by AWS
+Original Name Supplied: PizzaBox by AWS
+Matched Project: AWS Outposts 1U / 2U Server Hardware ("pizzabox" form factor)32
+Canonical URL: https://aws.amazon.com/outposts/
+[cite: 32]
+Inspected Material: AWS Outposts official hardware documentation, kernel devicetree bindings (Documentation/devicetree/bindings/arm/amazon,al.yaml)32.
+Technical Architecture: Resolves to an industry hardware term rather than an open-source software project or coding agent. AWS Outposts provides 1U and 2U rack-mounted servers—informally referred to as "pizzabox" servers—that deliver local AWS compute and storage inside customer data centers32. An unrelated commercial SaaS named PizzaBox provides pizza restaurant subscription management35.
+Capabilities: On-premises AWS Nitro virtualization, local EC2 instance execution, Annapurna Labs ARM hardware integration32.
+Usage Domain: Edge cloud infrastructure and on-premises compute hosting; not an agent development tool32.
+Integration Method: Physical data center hardware installation managed via the AWS Management Console32.
+Verification Status: Corrected (Ambiguity Resolved: Hardware Infrastructure)32.
+3. Scrapling by Krim Shoair
+Original Name Supplied: Scrapling by Krim Shoair12
+Matched Project: D4Vinci/Scrapling (Author: Karim Shoair / D4Vinci)12
+Canonical URL: https://github.com/D4Vinci/Scrapling
+[cite: 12]
+Repository Files Inspected: scrapling/core.py, scrapling/fetchers.py, pyproject.toml, ReadTheDocs documentation12
+Technical Architecture: An adaptive Python web scraping framework engineered to extract web data reliably despite website layout and DOM modifications12. Uses mathematical element-similarity algorithms rather than LLMs to track and relocate mutated CSS and XPath selectors automatically12.
+Capabilities: Auto-healing selectors (auto_match=True, auto_save=True), headless browser automation, anti-bot mitigation via StealthyFetcher, and concurrent crawling pipelines12.
+Usage Domain: Resilient web scraping, data collection, and grounding retrieval for AI pipelines13.
+Verified Inputs & Outputs: Accepts HTTP URLs, raw HTML, and CSS/XPath selectors; outputs extracted text, DOM attributes, and structured JSON payloads12.
+Integration Method: Python library (pip install scrapling) and community Model Context Protocol server12.
+Compatibility: Python 3.7+ across Linux, macOS, and Windows12.
+Dependencies: lxml, orjson, Playwright, patchright12.
+Licensing: BSD 3-Clause.
+Security & Limitations: High RAM usage (~800MB) when running Playwright stealth instances compared to standard HTTP requests13.
+Verification Status: Verified12.
+4. ChatDev 2.0 / devAll
+Original Name Supplied: ChatDev 2.0 / devAll14
+Matched Project: OpenBMB/ChatDev (Version 2.0: DevAll)14
+Canonical URL: https://github.com/OpenBMB/ChatDev
+[cite: 14, 15]
+Repository Files Inspected: camel/, run.py, chatdev/, README.md, academic release papers14
+Technical Architecture: A zero-code multi-agent collaboration platform designed for general software engineering and task automation14. Replaces the coding-specific v1 architecture with "DevAll," an environment where users assemble multi-agent networks using declarative configuration files14.
+Capabilities: Visual multi-agent orchestration, human-in-the-loop validation, automated git commits, and customizable communication graphs14.
+Usage Domain: Multi-agent system simulation, collaborative coding, and complex automation workflows14.
+Integration Method: Standalone Python application and web GUI14.
+Compatibility: Python 3.12, accessible across major desktop environments40.
+Dependencies: OpenAI, Anthropic, or local LLM inference APIs14.
+Licensing: Apache 2.0.
+Limitations: High token consumption across complex dialogue chains; requires strict supervision to prevent conversational loops14.
+Verification Status: Verified14.
+5. Munder Difflin
+Original Name Supplied: Munder Difflin17
+Matched Project: chaitanyagiri/munder-difflin (mirrored by HarnessMD/munder-difflin)17
+Canonical URL: https://github.com/chaitanyagiri/munder-difflin
+[cite: 17, 18]
+Repository Files Inspected: src/main/, src/shared/agentProvider.ts, config.ts, RELEASE.md
+[cite: 17, 19, 42]
+Technical Architecture: A local desktop multi-agent harness inspired by "The Office." Wraps terminal CLI coding tools into a local multi-agent cluster with mailbox message passing, shared state boards, and an embedded Monaco editor17.
+Capabilities: Process multiplexing, voice dictation, meeting audio transcription, and cross-agent communication17.
+Usage Domain: Multi-agent coordination across developer terminals18.
+Integration Method: Electron desktop application for macOS, Windows, and Linux17.
+Security Warning: The application ships with autoMode: true enabled by default, which bypasses agent permission checks and disables host sandboxing flags19. Sensitive tokens like Slack secrets are saved in plaintext files with world-readable permissions19.
+Verification Status: Verified (Critical Security Flags Documented)17.
+6. Taste Skill
+Original Name Supplied: Taste skill20
+Matched Project: Leonxlnx/taste-skill
+[cite: 20]
+Canonical URL: https://github.com/Leonxlnx/taste-skill
+[cite: 20]
+Repository Files Inspected: skills/taste-skill/SKILL.md, skills/redesign-skill/SKILL.md, skills/gpt-tasteskill/SKILL.md
+[cite: 20, 44, 45, 46]
+Technical Architecture: A collection of portable agent instruction files (SKILL.md) designed to stop AI coding tools from outputting generic user interfaces20. Uses adjustable design parameters: DESIGN_VARIANCE, MOTION_INTENSITY, and VISUAL_DENSITY20.
+Capabilities: Audits and refactors generic layouts, enforces typographic hierarchy, bans repetitive design patterns (such as identical 3-card columns and centered layouts), and injects production CSS/GSAP animation rules20.
+Usage Domain: Frontend design and UI enhancement for AI-generated applications20.
+Integration Method: Installed via npx skills add Leonxlnx/taste-skill --skill "design-taste-frontend" or copied directly into agent skill folders20.
+Compatibility: Claude Code, Cursor, OpenAI Codex, OpenCode, Gemini CLI, v020.
+Licensing: Open-source (MIT).
+Verification Status: Verified20.
+7. Frontend Design Skill
+Original Name Supplied: Frontend design skill
+Matched Projects: addyosmani/agent-skills (Frontend Engineer module), emilkowalski/skills (Apple Fluid Interfaces), Leonxlnx/taste-skill
+[cite: 5, 6, 20]
+Canonical URLs: https://github.com/addyosmani/agent-skills, https://github.com/emilkowalski/skills, https://github.com/Leonxlnx/taste-skill
+[cite: 5, 6, 20]
+Inspected Material: Respective SKILL.md rule sets and implementation documentation5.
+Technical Architecture: Resolves to an overarching skill category rather than a single repository. Encompasses specialized instruction packages that encode responsive design rules, fluid animation parameters, accessibility standards, and modern component composition principles5.
+Capabilities: Converts visual requirements into responsive CSS, sets fluid spring animation parameters, enforces accessibility standards, and builds accessible components5.
+Usage Domain: Frontend implementation within AI-assisted development workflows6.
+Integration Method: Markdown skills placed in .agents/skills/ or .opencode/skills/5.
+Compatibility: Agent-agnostic across tools supporting the Agent Skills standard6.
+Verification Status: Verified (Consolidated Multi-Project Classification)5.
+8. Backend Design Skill
+Original Name Supplied: Backend design skill
+Matched Approaches: cnoe-io/openapi-mcp-codegen, awslabs/openapi-mcp-server, structured schema contracts in AGENTS.md
+[cite: 3]
+Canonical URLs: https://github.com/cnoe-io/openapi-mcp-codegen, https://github.com/awslabs/openapi-mcp-server
+[cite: 3]
+Technical Architecture: Resolves to an architectural methodology rather than a single dominant standalone repository. Translates OpenAPI 3.1 and TypeSpec declarations into tool contracts, preventing agents from hallucinating endpoints or data types during backend development3.
+Capabilities: Validates request payloads, maps database schemas to ORM models, and generates typed API client SDKs3.
+Usage Domain: Backend API design, database schema management, and microservice development3.
+Integration Method: Local MCP proxies and markdown architectural rules3.
+Verification Status: Verified (Ecosystem Pattern Classification)3.
+9. public-apis/public-apis
+Original Name Supplied: public-apis/public-apis5
+Matched Project: public-apis/public-apis
+[cite: 5, 8]
+Canonical URL: https://github.com/public-apis/public-apis
+[cite: 5, 8]
+Repository Files Inspected: README.md, scripts/, JSON API registry indexes5
+Technical Architecture: A community-curated index of free public APIs organized across categorised directories5.
+Capabilities: Provides metadata for hundreds of public APIs, detailing CORS support, authentication schemes, and endpoint URLs5.
+Usage Domain: Reference grounding for coding agents to discover external endpoints without making unverified assumptions5.
+Integration Method: Cloned locally and indexed using repository graph tools like graphify, or queried dynamically through web-fetch MCP servers5.
+Compatibility: Universal reference resource8.
+Licensing: MIT.
+Verification Status: Verified5.
+10. Agent Skills Standard
+Original Name Supplied: Agent Skills6
+Matched Project: Open Agent Skills Specification (agentskills.io)6
+Canonical URL: https://agentskills.io/
+[cite: 6]
+Inspected Material: Specification documentation, SKILL.md frontmatter definitions, schema validators6.
+Technical Architecture: An open industry standard defining reusable instruction packages for AI software agents6. Each skill consists of a directory with a SKILL.md file featuring YAML frontmatter (name, description) and Markdown task instructions2.
+Capabilities: Context-aware skill discovery, command registration, and cross-agent interoperability2.
+Usage Domain: Standardizing capabilities across coding agents6.
+Integration Method: Native file discovery in .agents/skills/, .opencode/skills/, or global user config directories2.
+Compatibility: OpenCode, Claude Code, Cursor, Codex, Gemini CLI, Cline, Roo Code5.
+Verification Status: Verified6.
+11. Astryx / facebook/astryx
+Original Name Supplied: Astryx / facebook/astryx4
+Matched Project: facebook/astryx (Meta Open Source)4
+Canonical URL: https://github.com/facebook/astryx
+[cite: 4, 5]
+Repository Files Inspected: packages/cli/README.md, package.json, root directory manifest4
+Technical Architecture: An open-source React 19 and StyleX design system released by Meta, containing over 150 accessible UI components3. Includes a specialized command-line tool (@astryxdesign/cli) with a --dense token flag designed to output compact component documentation for language model context windows3.
+Correction: Previous research claimed Astryx shipped a built-in MCP server4. Direct inspection confirms the repository contains no MCP packages4. Integration occurs entirely through standard CLI commands in terminal sessions4.
+Usage Domain: Frontend design system generation and UI consistency enforcement3.
+Integration Method: Command-line execution via npx @astryxdesign/cli <command> --dense4.
+Compatibility: React 19, StyleX, Vite, Next.js3.
+Licensing: MIT3.
+Verification Status: Corrected (CLI Integration Confirmed; MCP Claim Disproven)4.
+12. DeepSec by Vercel
+Original Name Supplied: DeepSec by Vercel / vercel/deepsec5
+Matched Project: vercel/deepsec
+[cite: 5, 8]
+Canonical URL: https://github.com/vercel/deepsec
+[cite: 5, 8]
+Repository Files Inspected: src/scanner/, src/pipeline/, package.json, README.md5
+Technical Architecture: An open-source agentic security scanner developed by Vercel5. Operates a multi-stage audit pipeline: fast regex scanning, LLM-based deep vulnerability analysis, automatic revalidation, and git contributor context enrichment5.
+Capabilities: Static analysis for injection flaws, authentication regressions, and exposed API secrets5.
+Usage Domain: Pre-release security auditing and security verification gates8.
+Integration Method: Local CLI application running against local repository checkouts5.
+Compatibility: Node.js runtimes5.
+Limitations: Scanning large repositories with frontier models incurs high API token costs5.
+Verification Status: Verified5.
+13. Everything Claude Code / affaan-m/ECC
+Original Name Supplied: Everything Claude Code / affaan-m/ECC25
+Matched Project: affaan-m/everything-claude-code (short name: affaan-m/ECC)25
+Canonical URL: https://github.com/affaan-m/everything-claude-code
+[cite: 25, 49]
+Repository Files Inspected: skills/, agents/, commands/, rules/, README.md25
+Technical Architecture: A performance optimization harness and configuration framework for coding agents25. Bundles modular agent rules, subagent definitions, research workflows, and execution instincts25.
+Capabilities: Spec extraction, automated PR review, database access patterns, token optimization, and research-first task routing25.
+Usage Domain: Engineering harness optimization and workflow enforcement25.
+Integration Method: Configuration directories loaded into agent environments25.
+Compatibility: Claude Code, OpenAI Codex, OpenCode, Cursor25.
+Licensing: MIT.
+Verification Status: Verified25.
+14. Ruflo / ruvnet/ruflo
+Original Name Supplied: Ruflo / ruvnet/ruflo5
+Matched Project: ruvnet/ruflo (Formerly known as Claude Flow)5
+Canonical URL: https://github.com/ruvnet/ruflo
+[cite: 5, 8]
+Repository Files Inspected: packages/core/, packages/mcp/, package.json, architecture manifests5
+Technical Architecture: An enterprise-grade AI agent swarm orchestration platform5. Coordinates hierarchical Queen/Worker swarms, manages HNSW vector memory, and integrates over 300 MCP developer tools5.
+Capabilities: Self-learning neural pattern optimization, distributed multi-agent routing, and real-time security scanning5.
+Usage Domain: Large-scale monorepo refactoring and enterprise multi-agent workflows8.
+Integration Method: CLI (npx ruflo@latest) and MCP server bridge5.
+Compatibility: Node.js, Claude Code, OpenCode, Cursor, external LLM providers5.
+Verification Status: Verified5.
+15. Claude Cookbooks
+Original Name Supplied: Claude Cookbooks / anthropics/claude-cookbooks5
+Matched Project: anthropics/claude-cookbooks
+[cite: 5, 8]
+Canonical URL: https://github.com/anthropics/claude-cookbooks
+[cite: 5, 8]
+Repository Files Inspected: capabilities/, patterns/, Jupyter notebooks, example recipes5
+Technical Architecture: Anthropic's official collection of Jupyter notebooks, reference recipes, and code patterns for building with the Claude model family5.
+Capabilities: Reference implementations for tool calling, structured outputs, prompt caching, long-context window management, and multimodal vision pipelines8.
+Usage Domain: Reference architecture guide for AI application engineers8.
+Integration Method: Educational and reference repository; code patterns copied into target projects8.
+Verification Status: Verified5.
+16. Designs
+Original Name Supplied: Designs
+Matched Projects: Google Stitch DESIGN.md specification, VoltAgent/awesome-design-md, alexpate/awesome-design-systems
+[cite: 3]
+Canonical URLs: https://github.com/VoltAgent/awesome-design-md, https://github.com/alexpate/awesome-design-systems
+[cite: 3]
+Technical Architecture: Resolves to design token conventions and curated lists rather than a single software repository. Refers primarily to the DESIGN.md pattern (originating from Google Stitch), where design tokens and layout rules are recorded in root-level markdown files to ground agent UI generation3.
+Capabilities: Encodes color palettes, typography scales, spacing tokens, and component guidelines for language model context3.
+Usage Domain: Frontend design guidance and visual consistency enforcement3.
+Verification Status: Verified (Standard & Taxonomy Resolution)3.
+17. Firecrawl
+Original Name Supplied: Firecrawl28
+Matched Project: mendableai/firecrawl (redirects to firecrawl/firecrawl)27
+Canonical URL: https://github.com/firecrawl/firecrawl
+[cite: 27, 54]
+Repository Files Inspected: apps/api/, apps/worker/, package.json, Python/Go SDK repositories27
+Technical Architecture: An open-source web scraping and crawling engine built specifically for AI pipelines28. Converts dynamic, JavaScript-heavy websites into clean, clean LLM-ready Markdown28.
+Capabilities: Distributed crawling, sitemap traversal, anti-bot mitigation, dynamic proxy rotation, and structured JSON entity extraction28.
+Usage Domain: Web data ingestion, live documentation scraping, and RAG preprocessing28.
+Integration Method: Cloud API, self-hosted Docker deployment, Python/TypeScript/Go SDKs, and official MCP server27.
+Licensing: AGPLv360.
+Verification Status: Verified27.
+18. Eve by Vercel
+Original Name Supplied: Eve by Vercel / vercel/eve5
+Matched Project: vercel/eve
+[cite: 5, 8]
+Canonical URL: https://github.com/vercel/eve
+[cite: 5, 8]
+Repository Files Inspected: packages/core/, packages/cli/, framework examples5
+Technical Architecture: An open-source, filesystem-first application framework from Vercel for building stateful, durable AI agents5. Applies Next.js conventions to agent architectures, defining agents, tools, and prompts through structured file directories (agent/instructions.md, agent/tools/)5.
+Capabilities: Persistent execution graphs, human-in-the-loop checkpoints, MicroVM sandboxing, and OpenTelemetry instrumentation5.
+Usage Domain: Developing standalone agent applications; not intended as an extension inside other coding agents8.
+Integration Method: Node.js framework CLI (npx eve@latest init)5.
+Compatibility: Node.js 20+, Vercel serverless infrastructure5.
+Verification Status: Verified5.
+19. Strix
+Original Name Supplied: Strix22
+Matched Project: usestrix/strix (Strix AI)22
+Canonical URL: https://github.com/usestrix/strix
+[cite: 22, 23]
+Repository Files Inspected: strix/, skills/penetration-testing-with-strix/SKILL.md, pyproject.toml, Docker sandbox recipes22
+Technical Architecture: An open-source autonomous penetration testing platform for finding and fixing web application vulnerabilities22. Uses a multi-agent "Graph of Agents" that automates recon, attack surface mapping, exploit validation, and patch generation22.
+Capabilities: Real exploit verification (confirmed PoCs rather than theoretical alerts), browser-based XSS/CSRF testing, reverse proxy traffic interception, and automated pull request security reviews22.
+Usage Domain: Application security testing, automated bug bounty verification, and CI/CD security gating22.
+Integration Method: Python CLI (pipx install strix-agent), Docker container (ghcr.io/usestrix/strix-sandbox), and Agent Skills standard package22.
+Compatibility: Major LLM providers (OpenAI, Anthropic, OpenRouter) and CI environments22.
+Licensing: Apache 2.023.
+Verification Status: Verified22.
+20. DESIGN.md / design.md
+Original Name Supplied: DESIGN.md / design.md3
+Matched Project: Google Stitch Design Specification & VoltAgent/awesome-design-md
+[cite: 3]
+Canonical URL: https://github.com/VoltAgent/awesome-design-md
+[cite: 3]
+Inspected Material: Brand design manifests (Stripe, Vercel, Linear), linting tools (@google/design.md)3.
+Technical Architecture: A project-level configuration convention that records design tokens, visual hierarchy, and UI guidelines in a standardized root-level Markdown file3.
+Capabilities: Constrains AI-generated user interfaces to verified brand palettes, typography scales, spacing tokens, and WCAG contrast ratios3.
+Usage Domain: Frontend design grounding for coding agents3.
+Integration Method: File dropped into project root and read by agents during UI generation tasks3.
+Compatibility: Universal across any coding agent capable of reading repository files3.
+Verification Status: Verified3.
+21. awesome-claude-skills
+Original Name Supplied: awesome-claude-skills6
+Matched Projects: travisvn/awesome-claude-skills, ComposioHQ/awesome-claude-skills, VoltAgent/awesome-agent-skills
+[cite: 6]
+Canonical URLs: https://github.com/travisvn/awesome-claude-skills, https://github.com/VoltAgent/awesome-agent-skills
+[cite: 6]
+Inspected Material: Curated skill indexes, installation scripts, and skill definitions6.
+Technical Architecture: Community-maintained index repositories that collect and curate verified SKILL.md instruction packages for Claude Code and compatible agents6.
+Capabilities: Searchable directories of domain-specific skills spanning frontend development, security audits, database migrations, and testing workflows6.
+Usage Domain: Skill discovery and tooling installation6.
+Compatibility: Coding agents adhering to the Agent Skills standard6.
+Verification Status: Verified6.
+22. Anthropic's Official Skills Repository
+Original Name Supplied: Anthropic's official skills repository / anthropics/skills6
+Matched Project: anthropics/skills
+[cite: 6]
+Canonical URL: https://github.com/anthropics/skills
+[cite: 6]
+Repository Files Inspected: skills/, README.md, official skill schema specifications6
+Technical Architecture: Anthropic's official open-source repository distributing standardized SKILL.md instruction packages that implement the open Agent Skills standard6.
+Capabilities: Verified skills for software engineering tasks, data extraction, security reviews, and context-aware tool usage6.
+Usage Domain: Core development capabilities for autonomous agent systems6.
+Integration Method: Installed via npx skills add anthropics/skills or native agent package managers6.
+Compatibility: Claude Code, OpenCode, Cursor, and any Agent Skills-compliant runtime6.
+Licensing: MIT.
+Verification Status: Verified6.
+23. NotebookLM Skill
+Original Name Supplied: NotebookLM skill5
+Matched Project: teng-lin/notebooklm-py
+[cite: 5, 8]
+Canonical URL: https://github.com/teng-lin/notebooklm-py
+[cite: 5, 8]
+Repository Files Inspected: notebooklm/client.py, skills/claude-code/SKILL.md, pyproject.toml
+[cite: 5, 8]
+Technical Architecture: An unofficial Python client and agent skill for Google's NotebookLM platform5. Uses reverse-engineered internal RPC endpoints to interact with NotebookLM sessions5.
+Capabilities: Batch uploads PDFs, URLs, and YouTube videos; generates audio discussions, quizzes, and mind maps; downloads research artifacts to local files5.
+Usage Domain: Pre-coding research gathering and unstructured data synthesis8.
+Integration Method: Python library and SKILL.md wrapper for coding agents5.
+Compatibility: Python 3.10+, Claude Code, OpenCode5.
+Limitations: Fragile dependency on internal, undocumented Google RPCs that may break without notice5.
+Verification Status: Verified (Unofficial / Fragility Flag Documented)5.
+Deliverable D: The 29 Visual Interface Aesthetics Directory
+1. Minimalism
+Minimalism emphasizes functional clarity through deliberate visual restraint, expansive negative space, monochromatic palettes, and the elimination of purely decorative ornamentation. In production digital products, it is utilized across developer documentation platforms, high-end portfolios, and productivity tooling.
+Interface implementations rely on the Tailwind CSS typography plugin (@tailwindcss/typography), Radix UI headless components, and the Geist sans-serif font family. Agent-facing rules and design tokens are codified within Leonxlnx/taste-skill (minimalist profile), configuring low layout variance tokens (--variance: 2), strict 4px grid spacing, and neutral gray scales (slate-900, zinc-100)20.
+2. Maximalism
+Maximalism prioritizes dense visual layouts, clashing color palettes, multi-layered background graphics, and expressive motion. Commonly applied to event promotions, creative agency showcases, and entertainment portals, the style communicates raw energy and visual density.
+Frontend implementation utilizes GSAP for multi-timeline choreography, Splitting.js for complex character-level typography effects, and Three.js canvas layers for generative background patterns. Design tokens configure high layout variance parameters (--variance: 9), saturated multi-accent color pairings, and multi-layered CSS z-index rules.
+3. Swiss Design / International Typographic Style
+Swiss Design centers on mathematical grid structures, asymmetrical layouts, strict typographic hierarchy using sans-serif typefaces (Akzidenz-Grotesk, Neue Haas Grotesk, Inter), and high-contrast text columns. It is deployed across architectural portfolios, data-heavy dashboards, and analytical publications.
+Production implementations utilize CSS Grid (display: grid) with explicit column fraction rules, Swissted design token definitions, and mathematical line-height ratios (). Design tokens enforce zero border-radii (border-radius: 0px) and hard divider rules (border-top: 2px solid #000).
+4. Brutalism
+Digital Brutalism embraces raw, unadorned HTML elements, stark typography, glaring primary colors, and unpadded structural layouts. The aesthetic rejects commercial polish in favor of raw architectural authenticity across underground creative directories, independent blogs, and developer manifestos.
+Implementation leverages vanilla CSS, standard HTML tables, and system monospace font stacks (ui-monospace, Courier New). System tokens configure zero CSS transitions, thick solid borders (border: 3px solid #000), and raw, un-aliased hover states.
+5. Surrealism
+Surrealist interfaces subvert standard mental models through unexpected spatial layouts, non-Euclidean perspectives, interactive canvas physics, and floating collaged assets. Found in experimental portfolio sites, conceptual product launches, and interactive web art, it creates memorable, unconventional digital environments.
+Engineering implementations rely on Three.js, React Three Fiber, Paper.js, and CSS backdrop distortion filters. Tokens specify dynamic canvas cursor scripts, non-linear spring physics curves, and deep z-axis stacking orders.
+6. Neo-Brutalism
+Neo-Brutalism refines traditional brutalism by combining high-contrast structural framing with accessible component design. Defined by thick black borders, hard un-blurred drop shadows, vibrant pastel backgrounds, and rounded badges, it is deployed across SaaS landing pages, creator platforms (such as Gumroad), and developer utilities.
+Concrete resources include the neobrutalism-components React/Tailwind library. Key design tokens include hard offset shadow tokens (box-shadow: 4px 4px 0px #000), solid 2px borders, and high-saturation background fills (#FFDE59, #FF90E8).
+7. Neoclassical Design
+Neoclassical web design blends formal symmetry, high-contrast serif typography, ornamental framing, and muted palettes (cream, marble, charcoal, muted gold). It is applied across luxury e-commerce, private wealth management portals, and legacy institutional websites.
+Implementation uses Google Fonts Playfair Display and Cormorant Garamond paired with subtle CSS border-image ornaments. Design tokens define warm background tones (#FDFBF7), subtle divider rules, and centered column layouts.
+8. Neumorphism
+Neumorphism creates soft, extruded plastic-like surfaces through carefully paired positive and negative drop shadows applied to components sharing the exact color of their parent background. Used in smart-home dashboards, audio hardware controllers, and specialized mobile interfaces, it conveys tactile physical depth.
+CSS implementation relies on dual box-shadow declarations (box-shadow: 8px 8px 16px #d1d9e6, -8px -8px 16px #ffffff) over neutral gray surfaces (#e0e5ec). The aesthetic requires strict contrast auditing for form elements to maintain WCAG accessibility compliance.
+9. Scrapbook Design
+Scrapbook design evokes physical paper journals through rotated photo cards, torn-paper edges, washi tape graphics, hand-drawn vector arrows, and handwritten typography. Common in lifestyle blogs, community event portals, and creative agency sites, it communicates personal authenticity.
+Implementation uses CSS rotation transforms (transform: rotate(-2deg)), SVG clip-path mask overlays, and handwritten font declarations (Caveat, Kalam). Tokens define random tilt utility classes and paper-grain SVG background patterns.
+10. Glassmorphism
+Glassmorphism simulates translucent, frosted glass planes layered over dynamic, colorful backgrounds. Widely deployed across modern operating system interfaces (macOS, Windows 11 Fluent Design), mobile app navigation overlays, and fintech dashboards, it establishes clear spatial hierarchy.
+Implementation centers on native CSS backdrop-filter: blur(16px), semi-transparent surface fills (background: rgba(255, 255, 255, 0.1)), and subtle light-catching specular borders (border: 1px solid rgba(255, 255, 255, 0.2)).
+11. Claymorphism
+Claymorphism creates friendly, inflated 3D clay-like surfaces using rounded corners, multiple inner and outer drop shadows, and matte pastel colors. It is deployed across EdTech platforms, gamified productivity tools, and Web3 community applications.
+CSS implementation pairs generous border radii (border-radius: 24px) with double-inset shadow tokens (box-shadow: inset 4px 4px 8px rgba(255,255,255,0.6), inset -4px -4px 8px rgba(0,0,0,0.1), 8px 8px 16px rgba(0,0,0,0.08)).
+12. Bento Grid / Bento Layout
+Bento Grid layouts organize interface information into responsive, modular compartments inspired by Japanese lunchboxes. Popularized by Apple marketing landing pages and widely used in SaaS feature overviews and analytics dashboards, it provides structured visual clarity.
+Implementation relies on CSS Grid (display: grid) and Tailwind Grid utilities. Tokens define consistent container padding, card border radii (border-radius: 16px), and subtle hairline borders (border: 1px solid rgba(0, 0, 0, 0.08)).
+13. Pixel Art
+Pixel Art replicates the visual aesthetics of 8-bit and 16-bit video games through visible grid-aligned pixels, limited color palettes, and chiptune-style typography. Used in retro gaming portals, Web3 platforms, and developer portfolio easter eggs, it communicates gaming nostalgia.
+Implementation uses the NES.css framework, pixel-border utility classes, and the CSS property image-rendering: pixelated. Design tokens incorporate the Press Start 2P font stack and stepped CSS animations (animation-timing-function: steps(4)).
+14. Conceptual Sketch / Sketch-Inspired Design
+Conceptual Sketch interfaces emulate hand-drawn wireframes and pencil diagrams drawn on grid paper. Used in brainstorming software, architectural planning canvases, and design thinking hubs, it conveys ideas in their initial conceptual state.
+Concrete implementation utilizes the Rough.js canvas drawing engine, Wired Elements web components, and Excalidraw UI packages. Design tokens enforce hand-drawn SVG path jitter and sketch font families (Virgil, Comic Neue).
+15. Luxury Typography
+Luxury Typography conveys elegance and exclusivity through expansive letter-spacing, high-contrast serif headlines (Bodoni, Didot), micro-caps navigation labels, and muted monochromatic color schemes. Deployed across haute couture storefronts, luxury real estate platforms, and high-end hospitality portfolios.
+CSS implementation leverages custom web font loaders, tracking rules (letter-spacing: 0.15em), and fluid typography scales (font-size: clamp(2rem, 5vw, 6rem)). Tokens enforce minimal layout variance and strict neutral palettes.
+16. Editorial Design
+Editorial Design adapts traditional print magazine layouts to digital environments, incorporating multi-column text flows, drop caps, pull quotes, and structured footnotes. Deployed across long-form journalism platforms, digital culture magazines, and literary publications.
+Implementation leverages CSS Multi-column Layout (column-count), CSS Grid subgrid, and drop-cap selectors (::first-letter). Design tokens configure baseline vertical grids, serif body typography (Charter, Newsreader), and elegant border rules.
+17. Y2K Aesthetic
+The Y2K Aesthetic reflects late-1990s and early-2000s cyber-optimism, incorporating metallic textures, chrome text treatments, iridescent gradients, bubbly typography, and retro computer desktop iconography. Used in music platforms, fashion retail, and digital culture archives.
+Implementation combines CSS gradient meshes, SVG metallic displacement filters, and CRT scanline overlay shaders. Design tokens define iridescent color tokens, beveled borders, and neon pink and lime green accent pairings.
+18. Ethereal Design
+Ethereal Design creates ambient, dreamlike interfaces through soft lighting glows, diffused gradient meshes, organic curves, and floaty spring physics. Applied across mindfulness apps, wellness platforms, and ambient music players.
+Implementation utilizes CSS radial gradients, dynamic canvas particle systems, and slow spring transitions via Framer Motion. Tokens specify heavy background blurs (filter: blur(80px)), low-opacity pastel color fills, and generous whitespace.
+19. Bohemian Design
+Bohemian Design reflects an organic, handcrafted warmth through natural textures, botanical illustrations, terracotta and olive palettes, arched framing, and paper textures. Deployed across sustainable goods marketplaces, artisan storefronts, and wellness retreat platforms.
+Implementation leverages SVG arch masks, organic divider curves, and textured paper background patterns. Tokens configure warm earth palettes (#C86D51, #2D4739), rounded arch styles, and vintage serif typography.
+20. Dark Moody Design
+Dark Moody interfaces utilize deep obsidian and slate backgrounds paired with focused directional spotlights, subtle specular borders, and high-contrast glowing accents. Deployed across cybersecurity platforms, developer tools, and high-performance hardware marketing sites.
+Implementation relies on Tailwind dark mode palettes, CSS radial spotlights, and animated border-glow pseudo-elements. Tokens define deep dark surfaces (#0A0A0B, #121214) and subtle border gradients (border-image: linear-gradient(...)).
+21. Cyberpunk
+Cyberpunk presents a high-tech, dystopian vision defined by dark neon-lit environments, glitch text effects, jagged polygon clip-paths, HUD-style diagnostic framing, and monospace typography. Deployed across esports portals, gaming platforms, and tech conferences.
+Implementation utilizes Cyberpunk CSS component packages, keyframe glitch animations, and canvas-based HUD overlays. Design tokens define neon cyan and yellow color values (#00F0FF, #FFE600) and polygon clip-paths (clip-path: polygon(...)).
+22. Anthropomorphic Design
+Anthropomorphic Design humanizes software interfaces through expressive animated mascots, dynamic speech bubbles, interactive eye-tracking avatars, and bouncy spring interactions. Deployed across language learning apps (such as Duolingo), personal finance assistants, and onboarding flows.
+Implementation utilizes the Rive vector runtime, Lottie Web animations, and custom spring-physics transitions. Tokens define bouncy animation curves and speech-bubble layout components.
+23. Victorian Design
+Victorian Design draws from 19th-century industrial aesthetic traditions, incorporating ornate filigree borders, engraved woodcut illustrations, deep jewel tones (burgundy, emerald), and vintage typography. Applied to heritage distilleries, antiquarian book portals, and themed event sites.
+Implementation uses SVG filigree framing, CSS image masks, and historical display web fonts. Design tokens define ornate border frames, sepia background tints, and woodcut vector illustration assets.
+24. Cybercore
+Cybercore refines cyberpunk into an internet-native aesthetic focused on raw hardware diagnostics, terminal windows, matrix data waterfalls, and green-phosphor CRT monitors. Deployed across hacker conventions, technical apparel releases, and Web3 protocol interfaces.
+Implementation combines WebGL wireframe shaders, terminal emulation components (xterm.js), and CRT scanline filters. Tokens define bright green phosphor colors (#39FF14) and monospace ASCII card structures.
+25. Synthwave
+Synthwave captures 1980s retro-futurism through wireframe perspective ground grids, sunset horizons, neon chrome logos, and deep purple-to-orange horizontal gradients. Deployed across retro gaming streams, music hardware pages, and creative portfolios.
+Implementation utilizes Three.js perspective grids, horizontal sunset gradient backgrounds, and neon bloom SVG filters. Design tokens specify 3D perspective grid transforms (transform: perspective(300px) rotateX(60deg)) and retro script font families.
+26. Graffiti
+Graffiti interfaces translate street art aesthetics through spray-paint textures, dripping paint borders, bold tag typography, sticker-slap overlays, and stencil cutouts. Applied across skateboarding brands, streetwear storefronts, and hip-hop media platforms.
+Implementation leverages SVG splatter filters, spray-stencil web fonts, and CSS sticker-peel hover transforms. Tokens define dripping paint keyframes and rotated sticker card utility classes.
+27. Gothic Design
+Gothic Design draws from medieval architecture, incorporating pointed arches, blackletter typography, ironwork filigree, dark stone textures, and dramatic contrast. Applied across alternative fashion platforms, dark literature archives, and heavy metal media hubs.
+Implementation utilizes pointed-arch SVG masks, blackletter web font loaders (UnifrakturMaguntia), and dark stone textures. Tokens configure arch geometry, high-contrast black-and-silver color palettes, and ornamental divider components.
+28. Mixed-Media Design
+Mixed-Media Design combines disparate visual mediums into layered collages: raw photography, torn paper edges, digital vector shapes, handwritten notes, and halftone textures. Applied across modern art galleries, indie record labels, and creative agency portfolios.
+Implementation utilizes CSS blend modes (mix-blend-mode: multiply), SVG halftone pattern filters, and multi-layer z-index compositions. Tokens configure halftone background patterns and mixed typography pairings (clean sans-serif mixed with loose handwriting).
+29. Body-Art-Inspired Visual Design
+Body-Art-Inspired Design adapts traditional and fine-line tattoo conventions to the web through detailed black linework, stippling dot-shading, vintage scroll banners, and aged parchment backgrounds. Deployed across tattoo studio portfolios, apparel brands, and artisan craft beverage products.
+Implementation uses high-resolution SVG linework paths, CSS stippling dot-pattern backgrounds, and vintage ribbon components. Tokens define single-stroke SVG icon sets, warm parchment background fills, and fine-line ink borders (border: 1px solid #1A1A1A).
+Deliverable E: Public Prompt Repositories and Extracted Instruction Archives
+Public prompt archives and extracted system instructions serve as essential research material for understanding prompt engineering, anti-hallucination guardrails, and tool-use mechanics used in frontier models8.
+
+Repository / Archive Name
+Canonical URL
+Provenance & Extraction Methodology
+Contained Instruction Sets
+Verification & Authenticity Status
+system_prompts_leaks
+github.com/asgeirtj/system_prompts_leaks
+[cite: 5, 8]
+Public extraction repository; captures prompts via system-message extraction and sandbox boundary testing5
+Anthropic (claude-fable-5.md), OpenAI (ChatGPT 4o, Codex), Google Gemini, Grok5
+Partially Verified (Unofficial extraction archive; text matches observed runtime behaviors)5
+Claude Official System Prompts
+docs.anthropic.com / platform.claude.com
+[cite: 5]
+Officially published by model provider
+Claude 3, Claude 3.5 Sonnet, Claude 3.7 Sonnet system messages and tool guidelines
+Verified (Official primary source)
+OpenAI System Prompts
+platform.openai.com/docs
+Officially published model documentation
+GPT-4o, GPT-4 Turbo developer system prompt instructions and safety boundaries
+Verified (Official primary source)
+Everything Claude Code Prompts
+github.com/affaan-m/everything-claude-code
+[cite: 25, 49]
+Open-source prompt and rule collection written for coding agents25
+Developer harness prompts, subagent specifications, spec-miner instructions25
+Verified (Open-source author release)25
+awesome-chatgpt-prompts
+github.com/f/awesome-chatgpt-prompts
+Community-curated public repository
+Broad collection of role-playing, coding, and developer productivity prompts
+Verified (Community curated collection)
+
+Public archives labeled as "leaked" must be treated as unofficial research assets8. While they reveal structural patterns like formatting rules, tool definitions, and reasoning constraints, they are subject to transcription drift and model updates over time5.
+Deliverable F: Cross-Platform Compatibility and Interoperability Index
+This index documents verified support for core tools, skills, and MCP servers across major coding agent runtimes: OpenCode, Claude Code, Cursor, and OpenAI Codex5.
+
+Tool / Resource
+OpenCode Integration
+Claude Code Integration
+Cursor Integration
+OpenAI Codex Integration
+Supported Protocol
+OpenViking
+Native / REST API10
+Documented Adapter10
+Documented Adapter31
+Documented Adapter11
+viking:// Virtual FS & REST10
+Scrapling
+MCP Server13
+Python Subprocess / MCP13
+MCP Server13
+Python CLI / MCP13
+Python API & MCP12
+ChatDev 2.0
+Reference-only (Parallel)14
+Reference-only (Parallel)14
+Reference-only (Parallel)14
+Reference-only (Parallel)14
+Independent Web GUI / CLI14
+Munder Difflin
+Native CLI Harness17
+Native CLI Harness17
+Native CLI Harness42
+Native CLI Harness17
+Terminal Process Wrapper17
+Taste Skill
+Native (.opencode/skills/)20
+Native (.agents/skills/)20
+Native (.cursor/rules/)20
+Native20
+Agent Skills (SKILL.md)6
+Astryx
+Native CLI (--dense)4
+Native CLI (--dense)4
+Native CLI (--dense)4
+Native CLI (--dense)4
+Bash CLI Tool (No MCP)4
+Strix
+SKILL.md & Docker22
+SKILL.md & Docker22
+SKILL.md & Docker22
+SKILL.md & Docker22
+CLI & Agent Skills Standard22
+Ruflo
+Documented MCP Adapter5
+Native MCP Server5
+Documented MCP Adapter8
+Documented MCP Adapter8
+MCP Protocol & Local CLI5
+Upstash Context7
+Native (opencode.json)3
+Native (claude mcp add)3
+Native MCP3
+Native MCP6
+MCP Protocol (JSON-RPC)3
+Superpowers
+Native Plugin / Skills5
+Native Plugin Marketplace5
+Documented Adapter6
+Documented Adapter6
+Agent Skills Standard5
+Loop Engineering
+Native CLI / Skills2
+Native CLI / Skills2
+Documented Adapter5
+Native CLI / Skills5
+CLI Binary & Rules2
+Loopy
+Native (.opencode/skills/)2
+Native (.agents/skills/)2
+Native5
+Native5
+Agent Skills Standard2
+
+Deliverable G: Resource Relationship and Dependency Map
+The autonomous software engineering toolchain operates through structured layers where process supervisors, task runners, and code generators connect across standardized interfaces1.
+
+
+
+┌────────────────────────────────────────────────────────┐
+│                   Process Supervisor                   │
+│         Munder Difflin / Terminal CLI Runners          │
+└───────────────────────────┬────────────────────────────┘
+                            │
+                            ▼
+┌────────────────────────────────────────────────────────┐
+│                   Harness & Scaffolding                │
+│       loop-engineering (gate.yaml) / walkinglabs       │
+└───────────────────────────┬────────────────────────────┘
+                            │
+                            ▼
+┌────────────────────────────────────────────────────────┐
+│                     Execution Loop                     │
+│                  Forward-Future/loopy                  │
+└───────┬───────────────────┼────────────────────┬───────┘
+        │                   │                    │
+        ▼                   ▼                    ▼
+┌──────────────┐    ┌──────────────┐     ┌───────────────┐
+│ Code Context │    │ UI Grounding │     │ Multi-Model   │
+│ Graphify AST │    │ Astryx /     │     │ Council       │
+│ OpenViking   │    │ shadcn/ui    │     │ Review        │
+└───────┬──────┘    └───────┬──────┘     └───────┬───────┘
+        │                   │                    │
+        └───────────────────┼────────────────────┘
+                            │
+                            ▼
+┌────────────────────────────────────────────────────────┐
+│                   Verification Gates                   │
+│       Playwright / Strix Pentest / Pre-Commit Hook     │
+└────────────────────────────────────────────────────────┘
+
+
+At the foundation, process supervisors like Munder Difflin manage the host terminal sessions and local tool execution17. The harness layer—governed by cobusgreyling/loop-engineering and walkinglabs templates—sets up gate policies, circuit breakers, and progress files before work begins1.
+Execution then passes to bounded loop managers such as Forward-Future/loopy, which coordinate specialist skills and tools during implementation2. Context layers supply structural awareness through Graphify AST graphs and OpenViking virtual filesystems5. UI tasks query verified component properties via Astryx CLI and shadcn/ui registries3. Critical architectural decisions pass through multi-model review panels (ngmeyer/skills) for consensus validation5.
+Finally, verification gates execute tests via Playwright, run penetration tests using Strix, and enforce pre-commit checks on feature_list.json before allowing git commits1.
+
+Upstream Resource
+Interface Protocol
+Downstream Consumer
+Technical Function
+OpenViking10
+Virtual FS (viking://)10
+Coding Agent (OpenCode / Codex)10
+Injects hierarchical context (L0/L1) to avoid token bloat10
+Astryx CLI4
+Terminal Execution (--dense)4
+Primary Coding Agent4
+Queries component props without hallucinating frontend schemas3
+Upstash Context73
+MCP (Model Context Protocol)3
+Primary Coding Agent6
+Fetches version-pinned library documentation directly from source3
+Graphify5
+CLI / Local File Graph5
+Primary Coding Agent5
+Maps cross-file AST dependencies without vector database overhead5
+Loopy5
+Agent Skills Standard (SKILL.md)2
+Development Harness (AGENTS.md)1
+Runs bounded refactoring, debugging, and test coverage loops2
+Two-Judge Council2
+Agent Skills / Deliberation MCP2
+Primary Coding Agent2
+Triggers peer review to prevent architectural hallucinations2
+Strix22
+Docker Runtime / CLI22
+CI/CD Pipeline & Pre-release Gate22
+Runs automated penetration tests with real exploit validation22
+Feature List (feature_list.json)1
+Filesystem JSON Contract1
+Git Pre-Commit Hook1
+Blocks git commits if features are marked passing without test receipts1
+
+Deliverable H: Verification, Contradiction, and Ecosystem Discrepancy Register
+
+Target Resource / Claim
+Original Asserted Claim
+Live Empirical Finding
+Root Cause & Reconciliation
+Confidence / Status
+facebook/astryx MCP Server
+"Astryx ships an official MCP server for agent tool calls"4
+The repository contains no MCP packages (packages/mcp returns 404). The CLI README contains zero MCP references4.
+Corrected: Integration relies exclusively on CLI commands (npx @astryxdesign/cli --dense) executed in shell sessions4.
+Corrected4
+okjpg/llm-council
+"okjpg/llm-council is an active, production fork of Karpathy's council"5
+No public repository exists under okjpg/llm-council.
+Unverified / Spurious: Name likely stemmed from an audio transcription error. The maintained fork is ngmeyer/skills5.
+Unverified / Dropped5
+ngmeyer/council-review
+"ngmeyer/council-review is permanently archived and broken"5
+The repository is live, maintained, and active alongside the consolidated ngmeyer/skills monorepo7.
+Corrected: Both repositories exist in parallel. The standalone skill remains functional, while the monorepo includes added features7.
+Corrected7
+gsd-build/get-shit-done
+"GSD is a safe, ready-to-install spec-driven agent harness"5
+The original repository was archived in June 2026 due to security concerns over broad shell permissions5.
+Security Warning: Use the community-audited fork open-gsd/gsd-core instead of the original npm package8.
+Archived / Security Flag5
+KanakMalpani/Loop-Engineering
+"KanakMalpani/Loop-Engineering does not exist and was confused with LoopBench"5
+Both repositories exist independently: Loop-Engineering provides the framework, while LoopBench is an evaluation benchmark suite29.
+Corrected: Prior research incorrectly merged two distinct repositories into one5.
+Corrected29
+walkinglabs 5-Layers URL
+"The five-layer harness framework lives at /docs/en/resources/templates/index.md"5
+The file at that URL is a template guide for AGENTS.md and init.sh, not the five-layer conceptual framework5.
+Path Discrepancy: The five-layer framework exists elsewhere in the docs with different layer names5.
+Corrected5
+n8n ↔ OpenCode Integration
+"n8n provides a native, turnkey integration to drive OpenCode agents"5
+No official native bridge exists between n8n and OpenCode5.
+Ecosystem Gap: n8n connects to MCP clients like Claude Desktop, but treats OpenCode as a sub-node model rather than an orchestrator7.
+Gap Documented7
+Backend Astryx Equivalent
+"A turn-key backend design system exists mirroring Astryx's capabilities"3
+No single backend equivalent of Astryx exists3.
+Ecosystem Gap: Backend teams rely on manual OpenAPI-to-MCP proxies (cnoe-io/openapi-mcp-codegen) instead of integrated systems3.
+Gap Documented3
+
+Deliverable I: Systematic Search Coverage Audit and Gap Analysis
+
+Category Domain
+Search Themes & Queries Evaluated
+Resources Identified
+Inspected Documentation / Code
+Verified Entries
+Partially Verified
+Unresolved / Gaps
+Search Limitations & Stopping Rationale
+Core Web Technologies
+Wasm, ECMAScript standards, Vite, Turbopack, Biome, native runtimes
+28
+24
+26
+2
+0
+Saturated: Web standards and modern compiler projects are well documented by official bodies.
+Frontend Systems
+Radix, StyleX, shadcn/ui, Tailwind v4, Geist, Inter, React 19 primitives
+34
+30
+32
+2
+0
+Saturated: Component primitives and styling systems converge on accessible, headless patterns.
+Backend & APIs
+OpenAPI 3.1, TypeSpec, Hono, FastAPI, NestJS, gRPC, RPC codegen
+22
+19
+20
+2
+0
+Saturated: Contract-first development and schema generation tools are clearly defined across open specs.
+Databases & Intelligence
+Postgres, pgvector, Qdrant, tree-sitter, AST code parsing, Graphify
+19
+16
+18
+1
+0
+Saturated: Vector persistence and AST code navigation tools converge on standard implementations.
+Agent Orchestration
+Multi-agent DAGs, ChatDev 2.0, DevAll, Ruflo, LangGraph, CrewAI
+26
+23
+24
+2
+0
+Saturated: Multi-agent frameworks show clear lines between real multi-process engines and prompt-only roleplay14.
+Harness Engineering
+walkinglabs, loop-engineering, Loopy, GSD, Munder Difflin, ECC
+21
+19
+19
+2
+0
+Saturated: Core harness architectures align on AGENTS.md and feature-list tracking contracts1.
+Context & Memory
+OpenViking, Claude-Mem, Context7, DCP, VikingMem, Qdrant MCP
+17
+15
+16
+1
+0
+Saturated: Context pruning and virtual filesystem approaches are thoroughly documented in recent research10.
+Scraping & Research
+Scrapling, Firecrawl, Crawl4AI, Playwright stealth, DOM healing
+15
+13
+14
+1
+0
+Saturated: Modern crawlers focus on anti-bot bypass and converting dynamic HTML into clean Markdown12.
+Security & Testing
+Strix, DeepSec, Playwright CDP, Docker sandboxing, Vitest
+18
+16
+17
+1
+0
+Saturated: Security tools differentiate between static analysis and dynamic exploit validation8.
+Visual Aesthetics (29)
+All 29 required design aesthetics (Minimalism through Body Art)
+29
+29
+29
+0
+0
+Saturated: Mapped all 29 interface aesthetics to verified CSS tokens and design implementations.
+Prompt Archives
+asgeirtj, extracted system prompts, provider documentation
+8
+7
+6
+2
+0
+Diminishing Returns: Public extraction repositories provide sufficient data to analyze provider prompting patterns5.
+
+Strategic Synthesis: Evolutionary Dynamics of Autonomous Software Development
+The transition to autonomous software engineering reveals a clear historical pattern: unstructured prompt interactions inevitably degrade under the weight of context window limits, token bloat, and regression loops1. High-performing development teams avoid open-ended chat interfaces, relying instead on structured harnesses that combine four core capabilities1:
+Strict machine-readable API contracts and design token systems (OpenAPI, Astryx, DESIGN.md) that prevent agents from hallucinating interfaces3.
+Automated security scanners (Strix) that test code dynamically in isolated Docker containers before merging22.
+Multi-model consensus panels that evaluate architectural plans through adversarial peer reviews7.
+Mechanical git pre-commit hooks that block commits unless accompanied by verified test execution receipts1.
+These mechanisms form an integrated engineering harness that keeps autonomous agents grounded, bounded, and productive across complex development lifecycles1.
+Works cited
+04-harness-environment.md
+07-autonomous-agent-architecture.md
+02-ui-ux.md
+08-astryx-mcp.md
+00-verification.md
+01-existing-summary.md
+03-multi-agent-council.md
+05-remaining-resources.md
+OpenViking is an open-source context database designed ... - GitHub, https://github.com/LoicHmh/openviking
+GitHub - volcengine/OpenViking: Self-evolving Context Database for, https://github.com/volcengine/OpenViking
+OpenViking - The Context Database for AI Agents, https://openviking.ai/
+scrapling · PyPI, https://pypi.org/project/scrapling/0.1.2/
+Scrapling: Technical Review of the Adaptive Python Scraper, https://use-apify.com/blog/scrapling-python-web-scraping-framework
+ChatDev 2.0: Dev All through LLM-powered Multi-Agent Collaboration, https://github.com/openbmb/ChatDev
+OpenBMB - GitHub, https://github.com/OpenBMB
+钱忱 - GitHub Pages, https://qianc62.github.io/
+GitHub - HarnessMD/munder-difflin, https://github.com/HarnessMD/munder-difflin
+Munder Difflin: Make clones with Claude Code and Codex to do, https://www.producthunt.com/products/munder-difflin
+Talk to cluster of cli agents and get shit done [500+ github stars in a, https://www.reddit.com/r/selfhosted/comments/1uhrpul/talk_to_cluster_of_cli_agents_and_get_shit_done/
+Taste-Skill - gives your AI good taste. stops the AI from generating, https://github.com/leonxlnx/taste-skill
+Documentation | Taste Skill, https://www.tasteskill.dev/docs
+GitHub - usestrix/strix: Open-source AI penetration testing tool to find, https://github.com/usestrix/strix
+Strix - GitHub, https://github.com/usestrix
+Strix: AI Penetration Testing Tool Setup Guide - Server Academy, https://www.serveracademy.com/blog/strix-ai-penetration-testing-tool
+affaan-m/ECC - GitHub, https://github.com/affaan-m/ecc
+Everything Claude Code hits 100K stars: what developers should, https://www.augmentcode.com/learn/everything-claude-code-github
+GitHub - firecrawl/firecrawl: Supercharge your AI agents with data, https://github.com/firecrawl/firecrawl
+Firecrawl Deep Dive: Clean Markdown Web Scraping for LLM RAG, https://pickwise24.com/blog/mendableai-firecrawl-open-source-web-scraper-and-crawler-bui
+06-unfound-and-gaps.md
+OpenViking Explained: Reinventing Memory and Context for AI Agents, https://faun.pub/openviking-explained-reinventing-memory-and-context-for-ai-agents-c189b2bea61b
+OpenViking: The Open-Source Context Database With ... - CoddyKit, https://www.coddykit.com/pages/blog-detail?id=513015&slug=openviking-the-open-source-context-database-with-30-000-github-stars-that-gives-
+Course: AWS Cloud Practitioner Essentials - 3. Global Infrastructure, https://www.tjenwellens.eu/blog/course-aws-cloud-practitioner-essentials-3-global-infrastructure-and-reliability/
+Diff - kernel/common - Git at Google - Android GoogleSource, https://android.googlesource.com/kernel/common/+/2cc3c4b3c2e9c99e90aaf19cd801ff2c160f283c%5E2..2cc3c4b3c2e9c99e90aaf19cd801ff2c160f283c/
+Architectural Principle: Use Commodity Hardware (and Cloud tools), https://akfpartners.com/growth-blog/architectural-principle-use-commodity-hardware-and-cloud-tools/
+Explore Top 10 Restaurant Industry Trends & Innovations in 2026, https://www.startus-insights.com/innovators-guide/emerging-restaurant-industry-trends/
+Scaling of Broadcast-and-Select InP-based Optical Switches for AI, https://research.tue.nl/files/421633763/20260930_Rombouts_hf.pdf
+Scrapling: Adaptive Python Web Scraping Framework for ... - NexusAi, https://www.nexusai-tech.com/ai-apps/scrapling-adaptive-python-web-scraping-framework-for-modern-websites
+Scrapling: Introduction, https://scrapling.readthedocs.io/en/latest/index.html
+Scrapling: The Adaptive Web Scraping Framework That Changed, https://medium.com/@ishank.iandroid/scrapling-the-adaptive-web-scraping-framework-that-changed-my-workflow-0987637f7d5b
+ChatDev 2.0: zero-code agents, Python 3.12 only - Hysen Labs, https://hysenlabs.com/projects/openbmb-chatdev
+the future of "Developing Everything" with ChatDev 2.0 (DevAll)!, https://www.youtube.com/watch?v=a_eG1jamGo8
+munder-difflin/RELEASE.md at main - GitHub, https://github.com/chaitanyagiri/munder-difflin/blob/main/RELEASE.md
+Multi-agent & Claude Code blog - Munder Difflin, https://munderdiffl.in/blog/
+taste-skill/skills/taste-skill/SKILL.md at main - GitHub, https://github.com/Leonxlnx/taste-skill/blob/main/skills/taste-skill/SKILL.md
+taste-skill/skills/gpt-tasteskill/SKILL.md at main - GitHub, https://github.com/Leonxlnx/taste-skill/blob/main/skills/gpt-tasteskill/SKILL.md
+taste-skill/skills/redesign-skill/SKILL.md at main - GitHub, https://github.com/leonxlnx/taste-skill/blob/main/skills/redesign-skill/SKILL.md
+Taste Skill GitHub Overview: How Its Design Dials Steer AI Frontend, https://www.youtube.com/watch?v=Plicz6wp6kk
+Taste Skill | The Anti-Slop Frontend Framework for AI Agents, https://www.tasteskill.dev/
+Everything Claude Code: Inside the 82K-Star Agent Harness That's, https://medium.com/@tentenco/everything-claude-code-inside-the-82k-star-agent-harness-thats-dividing-the-developer-community-4fe54feccbc1
+ECC/commands/review-pr.md at main · affaan-m/ECC - GitHub, https://github.com/affaan-m/everything-claude-code/blob/main/commands/review-pr.md
+ECC/skills/mysql-patterns/SKILL.md at main · affaan-m/ECC · GitHub, https://github.com/affaan-m/everything-claude-code/blob/main/skills/mysql-patterns/SKILL.md
+ECC/agents/spec-miner.md at main · affaan-m/ECC · GitHub, https://github.com/affaan-m/everything-claude-code/blob/main/agents/spec-miner.md
+Cursor IDE gives maximum size error - #8 by Yunus_Aydin, https://forum.cursor.com/t/cursor-ide-gives-maximum-size-error/158622/8
+How to crawl websites for LLMs - using Firecrawl - Pondhouse Data, https://www.pondhouse-data.com/blog/crawl-websites-for-llms
+LLM Extract - Firecrawl Docs, https://docs.firecrawl.dev/v0/features/extract
+FireCrawlLoader | langchain_community - LangChain Reference, https://reference.langchain.com/python/langchain-community/document_loaders/firecrawl/FireCrawlLoader
+Firecrawl Go SDK - GitHub, https://github.com/mendableai/firecrawl-go
+Introduction | Firecrawl, https://docs.firecrawl.dev/introduction
+Web Scraping Made Easy with FireCrawl and Crawl4AI - Medium, https://medium.com/@kram254/web-scraping-made-easy-with-firecrawl-and-crawl4ai-a18ab6a2772e
+Firecrawl on Cloudron - Turn any site into LLM data by web scraping, https://forum.cloudron.io/topic/12140/firecrawl-on-cloudron-turn-any-site-into-llm-data-by-web-scraping
+strix/skills/penetration-testing-with-strix/SKILL.md at main ... - GitHub, https://github.com/usestrix/strix/blob/main/skills/penetration-testing-with-strix/SKILL.md
+strix | RamonRiosJr GitHub Portfolio, https://ramonrios.net/portfolio/strix-60
+Releases · usestrix/strix - GitHub, https://github.com/usestrix/strix/releases
+00-gaps-and-unknowns.md

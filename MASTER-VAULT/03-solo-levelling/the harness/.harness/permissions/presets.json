@@ -1,0 +1,117 @@
+{
+  "$schema": "https://harness.dev/schemas/permissions-presets-v1.json",
+  "archetypes": {
+    "C1_ProductEngineering": {
+      "description": "Full greenfield & feature development in isolated workspace",
+      "allowed_tools": [
+        "filesystem:*",
+        "git:*",
+        "playwright:*",
+        "context7:*",
+        "run_command:pytest",
+        "run_command:npm-test",
+        "run_command:cargo-test"
+      ],
+      "denied_tools": [
+        "run_command:sudo",
+        "run_command:docker-privileged",
+        "git:push_force_main"
+      ],
+      "hitl_escalation_triggers": [
+        "file_deletion_count > 5",
+        "dependency_added_with_gpl_license",
+        "network_egress_to_unknown_host"
+      ]
+    },
+    "C2_Data_MLOps": {
+      "description": "Data processing, notebook evaluation, pipeline training",
+      "allowed_tools": [
+        "filesystem:read*",
+        "filesystem:write:./data/*",
+        "postgres_readonly:*",
+        "run_command:python-pytest-data"
+      ],
+      "denied_tools": [
+        "postgres_readonly:DROP*",
+        "postgres_readonly:TRUNCATE*",
+        "filesystem:write:/etc/*"
+      ],
+      "hitl_escalation_triggers": [
+        "dataset_rows_modified > 10000",
+        "model_weights_overwrite"
+      ]
+    },
+    "C3_Browser_Automation": {
+      "description": "E2E UI automation, DOM testing, synthetic user flows",
+      "allowed_tools": [
+        "playwright:*",
+        "fetch_safe:*",
+        "filesystem:read*",
+        "filesystem:write:./tests/e2e/*"
+      ],
+      "denied_tools": [
+        "run_command:bash*",
+        "filesystem:write:./src/*"
+      ],
+      "hitl_escalation_triggers": [
+        "payment_gateway_interaction",
+        "production_domain_login"
+      ]
+    },
+    "C4_Knowledge_Synthesis": {
+      "description": "Deep codebase research, documentation generation, RFC drafting",
+      "allowed_tools": [
+        "filesystem:read*",
+        "context7:*",
+        "memory_graph:*",
+        "filesystem:write:./docs/*"
+      ],
+      "denied_tools": [
+        "run_command:*",
+        "filesystem:write:./src/*"
+      ],
+      "hitl_escalation_triggers": [
+        "network_egress_to_unknown_host",
+        "file_deletion_count > 5"
+      ]
+    },
+    "C5_Platform_Infra": {
+      "description": "Terraform, Kubernetes manifests, CI/CD pipeline automation",
+      "allowed_tools": [
+        "filesystem:read*",
+        "filesystem:write:./terraform/*",
+        "filesystem:write:./.github/*",
+        "run_command:terraform-plan",
+        "run_command:tflint"
+      ],
+      "denied_tools": [
+        "run_command:terraform-apply-autoapprove",
+        "run_command:kubectl-delete-namespace"
+      ],
+      "hitl_escalation_triggers": [
+        "terraform_apply_requested",
+        "iam_policy_modification",
+        "secret_rotation_request"
+      ]
+    },
+    "C6_Modernization_Migration": {
+      "description": "Strangler refactoring, framework upgrades, schema conversions",
+      "allowed_tools": [
+        "filesystem:*",
+        "git:status",
+        "git:diff",
+        "git:worktree_*",
+        "context7:*",
+        "run_command:pytest",
+        "run_command:npm-test"
+      ],
+      "denied_tools": [
+        "git:commit_to_main"
+      ],
+      "hitl_escalation_triggers": [
+        "breaking_api_schema_change",
+        "database_migration_non_additive"
+      ]
+    }
+  }
+}

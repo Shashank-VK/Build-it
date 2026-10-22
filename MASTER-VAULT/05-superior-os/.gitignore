@@ -1,0 +1,4 @@
+# Solo AI Product Engineering System v1.0
+.env
+*.pyc
+__pycache__/

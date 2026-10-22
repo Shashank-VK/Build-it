@@ -1,0 +1,80 @@
+# Taskfile.yml — Solo AI Product Engineering Harness Task Runner
+# Solo AI Product Engineering System v1.0
+# Install: https://taskfile.dev
+
+version: "3"
+
+tasks:
+  verify:
+    desc: "Run all verification gates: linting + tests + secret scan"
+    cmds:
+      - echo "[verify] Running linter..."
+      - task: lint
+      - echo "[verify] Running tests..."
+      - task: test
+      - echo "[verify] Running secret scan..."
+      - task: secret-scan
+      - echo "[verify] ALL GATES PASSED."
+
+  test:
+    desc: "Run test suite (exits non-zero on first failure)"
+    cmds:
+      - python3 -m pytest scripts/ -x -q
+
+  lint:
+    desc: "Run linter on Python files"
+    cmds:
+      - |
+        python3 -m flake8 .harness/hooks/ scripts/ --max-line-length=100 2>/dev/null ||
+        python3 -m ruff check .harness/hooks/ scripts/ 2>/dev/null ||
+        { echo "[lint] ERROR: neither flake8 nor ruff is installed. Install with: pip install flake8" >&2; exit 1; }
+
+  secret-scan:
+    desc: "Scan for hardcoded secrets"
+    cmds:
+      - bash scripts/secret-scan.sh
+
+  sandbox:
+    desc: "Run command in sandbox isolation. Usage: task sandbox -- <command>"
+    cmds:
+      - bash .harness/sandbox/gate.sh "{{.CLI_ARGS}}"
+
+  skills-list:
+    desc: "List all registered skills"
+    cmds:
+      - echo "=== 9 OS Workflows ==="
+      - echo "1. working-backwards    Gate 2 - PR/FAQ + skeptical customer challenge"
+      - echo "2. scope-gate           Automated - Non-Goals conflict detection"
+      - echo "3. alternatives-gen     Design - 2-3 genuine alternatives before committing"
+      - echo "4. failure-mode-anal    Integration - top-3 failure modes per external dep"
+      - echo "5. launch-checklist     Gate 6 - 8-item pre-deploy verification"
+      - echo "6. deploy-monitor       Post-deploy - metric watch + rollback trigger"
+      - echo "7. postmortem-opener    Incident - 3-section postmortem draft"
+      - echo "8. stakes-classifier    Pre-impl - low/medium/high stakes determination"
+      - echo "9. unknown-first-sort   Impl - uphill before downhill scope ordering"
+      - echo ""
+      - echo "=== Adversarial Review ==="
+      - echo "FCAR (fcar-reviewer)    Gate 4 - fresh context rubric evaluation"
+
+  fcar:
+    desc: "Reminder to run FCAR in a fresh context. Usage: task fcar -- <artifact-path>"
+    cmds:
+      - echo "[FCAR] Fresh Context Adversarial Review"
+      - echo "[FCAR] MANDATORY: Open a new AI conversation. No memory of artifact creation permitted."
+      - echo "[FCAR] Artifact: {{.CLI_ARGS}}"
+      - echo "[FCAR] System prompt is in: .harness/skills/fcar-reviewer/SKILL.md"
+      - echo "[FCAR] Rubric is in: os/fcar-rubric.md"
+
+  new-project:
+    desc: "Initialize a new project. Usage: task new-project -- <project-name>"
+    cmds:
+      - mkdir -p "projects/{{.CLI_ARGS}}"
+      - cp os/artifacts/pitch-template.md "projects/{{.CLI_ARGS}}/pitch.md"
+      - cp os/artifacts/build-log-template.md "projects/{{.CLI_ARGS}}/build-log.md"
+      - echo "[new-project] Created projects/{{.CLI_ARGS}}/"
+      - echo "[new-project] Next steps:"
+      - echo "  1. Open projects/{{.CLI_ARGS}}/pitch.md"
+      - echo "  2. Set your appetite (days/hours) BEFORE writing the solution"
+      - echo "  3. Run Working Backwards workflow if you have not written the PR/FAQ yet"
+      - echo "  4. Fill in the Pitch document"
+      - echo "  5. Gate 3: Honestly ask yourself 'can I build this in [appetite]?'"

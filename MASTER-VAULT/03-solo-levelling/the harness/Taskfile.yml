@@ -1,0 +1,79 @@
+# https://taskfile.dev
+version: '3'
+
+tasks:
+  test:
+    desc: Run pytest test suite with exit-on-first-failure
+    cmds:
+      - pytest tests/ -q -x
+
+  lint:
+    desc: Run Ruff lint and format checks across the codebase
+    cmds:
+      - ruff check . && ruff format --check .
+
+  verify:
+    desc: Sequentially run lint checks followed by the test suite
+    cmds:
+      - task: lint
+      - task: test
+
+  sandbox:
+    desc: Execute sandbox gate isolation script with forwarded arguments
+    cmds:
+      - .harness/sandbox/gate.sh {{.CLI_ARGS}}
+
+  harness-check:
+    desc: Validate presence and integrity of core .harness configuration files
+    cmds:
+      - |
+        python3 -c '
+        import os, sys
+
+        required_files = {
+            "hooks.json": [".harness/hooks/hooks.json"],
+            "policies.cedar": [".harness/permissions/policies.cedar"],
+            "presets.json": [".harness/permissions/presets.json"],
+            "litellm-config.yaml": [".harness/telemetry/litellm-config.yaml"],
+            "harness.config.yaml": [
+                ".harness/config/harness.config.yaml",
+                ".harness/config/harness.yaml",
+                ".harness/harness.config.yaml",
+                "harness.config.yaml"
+            ]
+        }
+
+        missing = []
+        found = {}
+
+        for name, candidates in required_files.items():
+            loc = next((c for c in candidates if os.path.exists(c)), None)
+            if loc:
+                found[name] = loc
+            else:
+                missing.append(name)
+
+        print("=" * 60)
+        print(" AI Development Harness Configuration Validation ")
+        print("=" * 60)
+        for name, loc in found.items():
+            print(f"  [PASS] {name:<22} -> {loc}")
+
+        if missing:
+            print("\nMissing required configuration files:")
+            for m in missing:
+                print(f"  [FAIL] {m}")
+            sys.exit(1)
+        else:
+            print(f"\nSummary: All {len(found)} core harness configuration files verified.")
+        '
+
+  skills-list:
+    desc: List all registered harness skills and their capability tiers
+    cmds:
+      - cat .harness/skills/index.json | python3 -c "import json,sys; [print(f'{s["id"]:>3}. {s["name"]} [{s["tier"]}]') for s in json.load(sys.stdin)['skills']]"
+
+  gate-check:
+    desc: Run standalone Gitleaks secret detection across workspace without git dependence
+    cmds:
+      - gitleaks protect --no-git --source=. --verbose

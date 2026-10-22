@@ -1,0 +1,181 @@
+version: "1.0.0"
+project:
+  name: "autonomous-dev-harness"
+  root: "."
+  description: "Declarative Harness-as-Code Configuration (CAP-19, CAP-25, CAP-35)"
+
+agents:
+  planner:
+    description: "High-reasoning strategic decomposition and state-machine orchestration subagent"
+    model: "coding-primary"
+    prompt_path: ".harness/agents/planner.md"
+    token_budget: 8000
+    permission_tier: "Class-0 (Read-Only Orchestration)"
+    tools:
+      - "read_file"
+      - "list_dir"
+      - "grep_search"
+      - "find_by_name"
+      - "view_file"
+      - "ask_question"
+      - "invoke_subagent"
+      - "send_message"
+      - "manage_subagents"
+
+  explorer:
+    description: "Fast, zero-side-effect codebase research and AST navigation subagent"
+    model: "coding-fast"
+    prompt_path: ".harness/agents/explorer.md"
+    token_budget: 4000
+    permission_tier: "Class-0 (Strict Read-Only)"
+    tools:
+      - "read_file"
+      - "list_dir"
+      - "grep_search"
+      - "find_by_name"
+      - "view_file"
+      - "read_url_content"
+      - "search_web"
+
+  coder:
+    description: "Sandboxed implementation and test-driven engineering subagent"
+    model: "coding-primary"
+    prompt_path: ".harness/agents/coder.md"
+    token_budget: 12000
+    permission_tier: "Class-1 (Idempotent Mutation) & Class-2 (Compensable Action)"
+    workspace_boundary:
+      - "./src"
+      - "./tests"
+      - "./docs"
+      - "./scratch"
+    tools:
+      - "read_file"
+      - "list_dir"
+      - "grep_search"
+      - "find_by_name"
+      - "view_file"
+      - "write_to_file"
+      - "replace_file_content"
+      - "run_command"
+
+  reviewer:
+    description: "Multi-perspective staff code review and security audit subagent"
+    model: "coding-primary"
+    prompt_path: ".harness/agents/reviewer.md"
+    token_budget: 6000
+    permission_tier: "Class-0 (Read-Only Verification)"
+    tools:
+      - "read_file"
+      - "list_dir"
+      - "grep_search"
+      - "find_by_name"
+      - "view_file"
+      - "run_command"
+
+tools:
+  execution_sandbox:
+    engine: "bubblewrap" # local: bubblewrap; cloud: gvisor
+    isolation_mode: "git_worktree"
+    writable_paths:
+      - "./src"
+      - "./tests"
+      - "./docs"
+      - "./scratch"
+    read_only_paths:
+      - "/"
+    denied_paths:
+      - "/etc"
+      - "/root"
+      - "~/.ssh"
+      - "~/.aws"
+      - "/dev/sd*"
+
+mcp:
+  config_path: ".harness/mcp/mcp_servers.json"
+  active_servers:
+    - name: "filesystem"
+      command: "npx"
+      args: ["-y", "@modelcontextprotocol/server-filesystem", "./src", "./tests", "./docs", "./.harness"]
+    - name: "git"
+      command: "npx"
+      args: ["-y", "@modelcontextprotocol/server-git"]
+    - name: "context7_docs"
+      command: "npx"
+      args: ["-y", "@upstash/context7-mcp"]
+      env:
+        CONTEXT7_API_KEY: "${env:CONTEXT7_API_KEY}"
+    - name: "postgres_readonly"
+      command: "npx"
+      args: ["-y", "@modelcontextprotocol/server-postgres", "postgresql://${env:DB_USER}:${env:DB_PASSWORD}@localhost:5432/${env:DB_NAME}?sslmode=prefer"]
+    - name: "playwright_browser"
+      command: "npx"
+      args: ["-y", "@executeautomation/playwright-mcp-server"]
+      env:
+        HEADLESS: "true"
+    - name: "memory_graph"
+      command: "npx"
+      args: ["-y", "@modelcontextprotocol/server-memory"]
+    - name: "fetch_safe"
+      command: "npx"
+      args: ["-y", "@modelcontextprotocol/server-fetch"]
+
+permissions:
+  policy_engine: "cedar"
+  policy_file: ".harness/permissions/policies.cedar"
+  presets_file: ".harness/permissions/presets.json"
+  side_effect_taxonomy:
+    class_0_read_only:
+      autonomous: true
+      actions: ["read_file", "list_dir", "grep_search", "find_by_name", "view_file", "read_url_content", "search_web"]
+    class_1_idempotent_mutation:
+      autonomous: true
+      snapshot_required: true
+      actions: ["write_to_file", "replace_file_content"]
+    class_2_compensable_action:
+      autonomous: true
+      saga_rollback_required: true
+      actions: ["run_command:pytest", "run_command:npm_test", "git_worktree_create"]
+    class_3_irreversible:
+      autonomous: false
+      hitl_gate_required: true
+      actions: ["git_push_main", "drop_database", "terraform_apply", "publish_package"]
+
+budgets:
+  cost_governance:
+    session_dollar_cap: 5.00
+    daily_dollar_cap: 50.00
+    alert_spend_threshold: 0.80
+    track_cost_per_token: true
+  token_budget_p0_to_p4:
+    p0_system_rules: 2000
+    p1_skills_index: 1500
+    p2_retrieved_ast: 8000
+    p3_working_memory: 12000
+    p4_response_buffer: 4000
+    max_context_tokens: 32000
+    compaction_trigger_tokens: 28000
+  model_gateway:
+    config_path: ".harness/telemetry/litellm-config.yaml"
+    router_strategy: "latency-based-routing"
+    failovers:
+      coding-primary:
+        - "gemini/gemini-2.5-pro"
+        - "openai/gpt-4o"
+        - "coding-local"
+
+workflows:
+  blueprints_dir: ".harness/workflows/blueprints"
+  registered:
+    - name: "build-verify"
+      path: ".harness/workflows/blueprints/build-verify.yaml"
+    - name: "refactor-safely"
+      path: ".harness/workflows/blueprints/refactor-safely.yaml"
+    - name: "test-and-verify"
+      path: ".harness/workflows/blueprints/test-and-verify.yaml"
+    - name: "migration-safeguard"
+      path: ".harness/workflows/blueprints/migration-safeguard.yaml"
+
+hooks:
+  manifest_path: ".harness/hooks/hooks.json"
+  pre_tool_guard: ".harness/hooks/pre_tool_guard.py"
+  post_tool_linter: ".harness/hooks/post_tool_linter.py"

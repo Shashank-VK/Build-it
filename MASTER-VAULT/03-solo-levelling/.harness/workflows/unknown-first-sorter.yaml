@@ -1,0 +1,37 @@
+# Unknown-First Sorter Workflow State Machine
+# Solo AI Product Engineering System v1.0
+# Source: Basecamp Shape Up (Hill Chart Sequencing)
+
+name: unknown-first-sorter
+version: "1.0"
+max_steps: 4
+on_exceed_max_steps: fatal_error
+
+states:
+  - id: receive_scopes
+    type: input
+    next: classify_scopes
+
+  - id: classify_scopes
+    type: ai_action
+    skill: unknown-first-sorter
+    output: sequenced_scopes
+    next: human_confirm_sequence
+
+  - id: human_confirm_sequence
+    type: human_checkpoint
+    prompt: "Scopes sorted uphill-first. Verify derisking order. [A]pprove sequence, [R]eorder scopes?"
+    on_A: update_build_log
+    on_R: classify_scopes
+
+  - id: update_build_log
+    type: system_action
+    action: append_to_build_log
+    description: "Write sequenced scopes to build-log.md session log."
+    next: sequencing_complete
+
+  - id: sequencing_complete
+    type: terminal
+    action: "Implementation sequence locked. Begin with Uphill Scope 1."
+
+termination: [sequencing_complete, max_steps_exceeded]

@@ -1,0 +1,39 @@
+# Postmortem Workflow State Machine
+# Solo AI Product Engineering System v1.0
+# Source: Google SRE & Amazon Correction of Errors (COE)
+
+name: postmortem
+version: "1.0"
+max_steps: 5
+on_exceed_max_steps: fatal_error
+
+states:
+  - id: receive_incident
+    type: input
+    next: compile_timeline
+
+  - id: compile_timeline
+    type: ai_action
+    skill: postmortem-opener
+    output: postmortem_draft
+    next: human_review
+
+  - id: human_review
+    type: human_checkpoint
+    prompt: "Postmortem draft generated. Review Five Whys chain and commit corrective actions. [A]ccept, [R]evise?"
+    on_A: verify_tasks_tracked
+    on_R: compile_timeline
+
+  - id: verify_tasks_tracked
+    type: verification
+    check: "Corrective actions tracked in project task list"
+    description: "Every corrective action item must have an owner, due date, and entry in task tracker."
+    next: postmortem_closed
+
+  - id: postmortem_closed
+    type: terminal
+    creates_artifact: true
+    artifact_type: postmortem
+    action: "Postmortem finalized and archived in git repository."
+
+termination: [postmortem_closed, max_steps_exceeded]

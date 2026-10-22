@@ -1,0 +1,9 @@
+# Ref: contract `../how-to-use/04-commands-workflows.md`.
+# Workflow: refactor-safely
+states:
+  - receive_refactor
+  - survey_first: {skill: repo-surveyor-map}
+  - isolate: {skill: git-worktree-isolation}
+  - characterization_tests: {note: "lock behavior before changing"}
+  - refactor_small_steps: {cmd: "python3 -m pytest scripts/ -q", hard_gate: true}
+  - done

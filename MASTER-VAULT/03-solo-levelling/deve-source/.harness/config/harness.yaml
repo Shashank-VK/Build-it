@@ -1,0 +1,50 @@
+# Master Harness Configuration
+# Solo AI Product Engineering System v1.0
+
+harness:
+  version: "1.0.0"
+  name: "solo-ai-product-engineering-harness"
+  description: >
+    OS + harness for a single developer working with AI.
+    Distilled from Amazon, Google, Basecamp engineering processes.
+
+loop_engineering:
+  max_steps_global: 15
+  debounce_identical_calls: true
+  require_deterministic_termination: true
+  self_certification_blocked: true
+  # Source: Anthropic orchestrator-workers, OpenAI Agents SDK orchestration
+
+os:
+  lifecycle_version: "1.0"
+  gates: [1, 2, 3, 4, 5, 6]
+  fcar_required_for_gate_4: true
+  adversarial_review_mechanism: "fresh_context_rubric"
+
+workflows:
+  enabled:
+    - working-backwards        # Workflow 1
+    - scope-gate               # Workflow 2
+    - alternatives-generator   # Workflow 3
+    - failure-mode-analyzer    # Workflow 4
+    - launch-checklist-runner  # Workflow 5
+    - deploy-monitor           # Workflow 6
+    - postmortem-opener        # Workflow 7
+    - stakes-classifier        # Workflow 8
+    - unknown-first-sorter     # Workflow 9
+
+skills:
+  count: 9
+  fcar_reviewer: "always_fresh_context_mandatory"
+
+telemetry:
+  config: ".harness/telemetry/litellm-config.yaml"
+  budget_enforcement: advisory (hard only with LiteLLM proxy; see scripts/spend-log.sh)
+
+security:
+  pre_tool_guard: ".harness/hooks/pre_tool_guard.py"
+  secret_scan: "scripts/secret-scan.sh"
+  cedar_policies: ".harness/permissions/policies.cedar"
+  presets: ".harness/permissions/presets.json"
+  sandbox: ".harness/sandbox/gate.sh"
+  guard_test_status: "see scripts/test_pre_tool_guard.py"

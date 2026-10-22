@@ -1,0 +1,55 @@
+{
+  "rule": "JuliusBrussee/caveman -> [REDACTED-caveman]; remaining standalone 'caveman' -> [REDACTED]",
+  "files_touched": 12,
+  "total_occurrences": 44,
+  "entries": [
+    {
+      "vault_path": "01-opencode-research/BUILD-PROMPT-FINAL.md",
+      "occurrences": 7
+    },
+    {
+      "vault_path": "01-opencode-research/BUILD-PROMPT-UNIVERSAL.md",
+      "occurrences": 6
+    },
+    {
+      "vault_path": "01-opencode-research/catalog.md",
+      "occurrences": 7
+    },
+    {
+      "vault_path": "01-opencode-research/research/01-existing-summary.md",
+      "occurrences": 1
+    },
+    {
+      "vault_path": "02-god-research/atlas/catalogs/03a-skills.md",
+      "occurrences": 1
+    },
+    {
+      "vault_path": "02-god-research/atlas/catalogs/05b-context.md",
+      "occurrences": 3
+    },
+    {
+      "vault_path": "02-god-research/atlas/index/phase0-inventory.md",
+      "occurrences": 1
+    },
+    {
+      "vault_path": "02-god-research/diffs-and-state/_state/atlas-read-group4.md",
+      "occurrences": 1
+    },
+    {
+      "vault_path": "02-god-research/first-pass/00-phase0-inventory.md",
+      "occurrences": 1
+    },
+    {
+      "vault_path": "04-builders-playbook/product_engineering/research/expansion-practices/01-contrarian-methodologies.md",
+      "occurrences": 3
+    },
+    {
+      "vault_path": "06-unbannered-addendums/_duplicates/07-catalog.md",
+      "occurrences": 7
+    },
+    {
+      "vault_path": "06-unbannered-addendums/part-18-b1-b10-overlap-and-universal.md",
+      "occurrences": 6
+    }
+  ]
+}

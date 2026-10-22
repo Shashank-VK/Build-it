@@ -1,0 +1,17 @@
+# lefthook.yml — Git hook configuration
+# Solo AI Product Engineering System v1.0
+
+pre-commit:
+  commands:
+    secret-scan:
+      run: bash scripts/secret-scan.sh
+    python-syntax:
+      glob: "*.py"
+      run: python3 -m py_compile {staged_files}
+
+pre-push:
+  commands:
+    verify-all:
+      run: bash scripts/verify.sh
+    pytest:
+      run: python3 -m pytest scripts/ -q

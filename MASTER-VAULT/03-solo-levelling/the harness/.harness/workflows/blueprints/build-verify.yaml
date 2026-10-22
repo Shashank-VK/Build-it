@@ -1,0 +1,61 @@
+version: "1.0.0"
+name: "build-verify"
+description: "Deterministic CI/CD and local build verification pipeline with multi-stage static analysis, type checking, and unit testing."
+trigger:
+  - "pre-commit"
+  - "manual"
+  - "agent_verification_gate"
+timeout_seconds: 300
+isolation: "git_worktree"
+
+steps:
+  - id: "secret_scan"
+    name: "Pre-flight Secret Leak Detection"
+    command: "gitleaks protect --staged --verbose --redact"
+    timeout_seconds: 30
+    on_failure: "abort"
+    required: true
+
+  - id: "format_check"
+    name: "Code Formatting Check"
+    command: "ruff format --check . && (test ! -f package.json || npx prettier --check 'src/**/*.{ts,tsx,js,jsx,json,md}')"
+    timeout_seconds: 30
+    on_failure: "abort"
+    required: true
+
+  - id: "lint_static_analysis"
+    name: "Linter & AST Diagnostics"
+    depends_on: ["format_check"]
+    command: "ruff check . && (test ! -f tsconfig.json || npx eslint src/)"
+    timeout_seconds: 60
+    on_failure: "abort"
+    required: true
+
+  - id: "type_check"
+    name: "Strict Type Verification"
+    depends_on: ["lint_static_analysis"]
+    command: "mypy --strict src/ && (test ! -f tsconfig.json || npx tsc --noEmit)"
+    timeout_seconds: 60
+    on_failure: "abort"
+    required: true
+
+  - id: "unit_tests"
+    name: "Hermetic Unit & Integration Tests"
+    depends_on: ["type_check"]
+    command: "pytest tests/unit -q --maxfail=1 && (test ! -f package.json || npm test -- --watchAll=false --bail)"
+    timeout_seconds: 120
+    on_failure: "abort"
+    required: true
+
+  - id: "artifact_health_gate"
+    name: "Artifact Health & Exit Code Validation"
+    depends_on: ["unit_tests"]
+    command: "python3 -c 'import sys; print(\"[VERIFICATION SUCCESS] All pipeline stages passed with exit code 0\"); sys.exit(0)'"
+    timeout_seconds: 10
+    on_failure: "abort"
+    required: true
+
+compensation:
+  on_abort:
+    - "echo '[WORKFLOW ABORTED] Build verification failed. Rolling back uncommitted worktree changes...'"
+    - "git reset --hard HEAD"

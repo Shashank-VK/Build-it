@@ -1,0 +1,16 @@
+{
+  "$schema": "https://langfuse.com/schema.json",
+  "telemetry": {
+    "enabled": true,
+    "public_key": "${env:LANGFUSE_PUBLIC_KEY}",
+    "secret_key": "${env:LANGFUSE_SECRET_KEY}",
+    "host": "${env:LANGFUSE_HOST:-https://cloud.langfuse.com}",
+    "flush_interval_seconds": 2,
+    "mask_inputs": false,
+    "mask_outputs": false,
+    "session_tags": [
+      "harness_phase=3.5",
+      "archetype=${env:HARNESS_ARCHETYPE:-C1_ProductEngineering}"
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+# LiteLLM Routing Configuration
+# Solo AI Product Engineering System v1.0
+# NOTE: budget caps advisory unless LiteLLM proxy running; enforced via scripts/spend-log.sh
+
+version: "1.0"
+
+router:
+  - model_name: "primary"
+    litellm_params:
+      model: "claude-sonnet-4-5"
+      max_tokens: 8192
+    budget_cap_per_task_usd: 0.50
+
+  - model_name: "fallback"
+    litellm_params:
+      model: "gemini/gemini-2.0-flash"
+      max_tokens: 8192
+    budget_cap_per_task_usd: 0.10
+
+  - model_name: "budget"
+    litellm_params:
+      model: "gemini/gemini-2.0-flash-lite"
+      max_tokens: 4096
+    budget_cap_per_task_usd: 0.02
+
+routing_strategy:
+  default: "primary"
+  on_primary_failure: "fallback"
+  low_stakes_tasks: "budget"
+  fcar_review: "primary"         # Fresh context review always uses primary model
+  high_stakes_review: "primary"  # High-stakes review always uses primary model
+
+global_limits:
+  max_daily_spend_usd: 10.00
+  alert_at_pct: 80
+  hard_stop_at_pct: 100

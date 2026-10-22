@@ -1,0 +1,9 @@
+# Ref: contract `../how-to-use/04-commands-workflows.md`.
+# Workflow: migration-safeguard
+states:
+  - receive_migration
+  - backup_and_copy: {note: "migrate a copy first, record timings"}
+  - apply_up: {hard_gate: true}
+  - apply_down: {note: "rollback must succeed", hard_gate: true}
+  - record_evidence: {to: build-log evidence}
+  - done
